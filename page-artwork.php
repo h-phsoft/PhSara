@@ -14,6 +14,7 @@ $artWork = cArtWork::getInstance($nId);
           <a class="dropdown-item" target="_BLANK" href="http://www.pinterest.com/pin/create/button/?description=Sara Shamma,<?php echo $artWork->Art_Title1; ?>&AMP;url=<?php echo $PH_SHARE_URL . $artWork->Art_Id; ?>&AMP;media=<?php echo $PH_SHARE_PATH_IMAGE_SMALL . $artWork->Art_Image ?>"><i class="fab fa-pinterest"></i>  Pinterest</a>
           <a class="dropdown-item" target="_BLANK" href="https://twitter.com/intent/tweet?text=Sara Shamma,<?php echo $artWork->Art_Title1; ?>&AMP;url=<?php echo $PH_SHARE_URL . $artWork->Art_Id; ?>"><i class="fab fa-twitter"></i>  Twitter</a>
           <!--<a class="dropdown-item" target="_BLANK"><i class="fab fa-instagram"></i>  Instagram</a>-->
+          <a class="shareMenu">share Menu</a>
         </div>
       </div>
     </div>
