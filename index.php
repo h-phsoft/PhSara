@@ -10,15 +10,15 @@ $PH_BASE_PATH_CSS = '/PhSara/assets/css/';
 $PH_BASE_PATH_IMG = '/PhSara/assets/img/';
 $PH_BASE_PATH_IMG_LOGO = '/PhSara/assets/img/logo/';
 $PH_BASE_PATH_IMG_ICONS = '/PhSara/assets/img/icons/';
-
-$PH_BASE_PATH_IMAGES = '/PhSara/assets/img/images/';
-$PH_BASE_PATH_IMAGE_SMALL = '/PhSara/assets/img/small/';
-$PH_BASE_PATH_IMAGE_UPLOADS = '/PhSara/assets/img/uploads/';
 /*
-  $PH_BASE_PATH_IMAGES = 'http://sarashamma.com/images/';
-  $PH_BASE_PATH_IMAGE_SMALL = 'http://sarashamma.com/small/';
-  $PH_BASE_PATH_IMAGE_UPLOADS = 'http://sarashamma.com/uploads/';
+  $PH_BASE_PATH_IMAGES = '/PhSara/assets/img/images/';
+  $PH_BASE_PATH_IMAGE_SMALL = '/PhSara/assets/img/small/';
+  $PH_BASE_PATH_IMAGE_UPLOADS = '/PhSara/assets/img/uploads/';
  */
+$PH_BASE_PATH_IMAGES = 'http://sarashamma.com/images/';
+$PH_BASE_PATH_IMAGE_SMALL = 'http://sarashamma.com/small/';
+$PH_BASE_PATH_IMAGE_UPLOADS = 'http://sarashamma.com/uploads/';
+
 $PH_SHARE_URL = 'http://sarashamma.com/2/';
 $PH_SHARE_PATH_IMAGES = 'http://sarashamma.com/images/';
 $PH_SHARE_PATH_IMAGE_SMALL = 'http://sarashamma.com/small/';
@@ -94,7 +94,7 @@ if ($nMode == 100 || $nMode == 0) {
   <head>
     <meta charset="utf-8">
     <title><?php echo $vTitle; ?></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=10.0, user-scalable=yes">
     <meta name="google" content="notranslate">
     <meta name="description" content="Sara Shamma is a renowned Syrian artist living and working in London UK, her practice focuses on death and humanity expressed mainly through self-portraits and children painted in a life-like visceral way. Working mainly from life and photographs, the artist uses oils to create a hyper realistic scene, using transparency lines and motion to portray a distant and deep void.">
     <meta name="keywords" content="">
