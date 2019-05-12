@@ -109,6 +109,7 @@ if (count($exhib->aArtworks) > 0) {
         }
         ?>
       </div>
+    </div>
   </section>
   <?php
 }

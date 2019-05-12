@@ -22,7 +22,9 @@ $artWork = cArtWork::getInstance($nId);
     <div class="row mb-5 text-center">
       <div class="col-12 my-2 text-center">
         <div class="powerzoomFrame">
-          <img id="artWork" class="powerzoom-highres" src="<?php echo $PH_BASE_PATH_IMAGE_SMALL . $artWork->Art_Image ?>" data-hammer="<?php echo $PH_BASE_PATH_IMAGE_SMALL . $artWork->Art_Image ?>" style="width: 100%;">
+          <a href="<?php echo $PH_BASE_PATH_IMAGE_SMALL . $artWork->Art_Image ?>" data-fancybox>
+            <img id="artWork" src="<?php echo $PH_BASE_PATH_IMAGE_SMALL . $artWork->Art_Image ?>" />
+          </a>
         </div>
       </div>
       <div class="col-12 my-3 text-center">

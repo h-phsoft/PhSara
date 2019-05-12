@@ -10,15 +10,15 @@ $PH_BASE_PATH_CSS = '/PhSara/assets/css/';
 $PH_BASE_PATH_IMG = '/PhSara/assets/img/';
 $PH_BASE_PATH_IMG_LOGO = '/PhSara/assets/img/logo/';
 $PH_BASE_PATH_IMG_ICONS = '/PhSara/assets/img/icons/';
-/*
-  $PH_BASE_PATH_IMAGES = '/PhSara/assets/img/images/';
-  $PH_BASE_PATH_IMAGE_SMALL = '/PhSara/assets/img/small/';
-  $PH_BASE_PATH_IMAGE_UPLOADS = '/PhSara/assets/img/uploads/';
- */
-$PH_BASE_PATH_IMAGES = 'http://sarashamma.com/images/';
-$PH_BASE_PATH_IMAGE_SMALL = 'http://sarashamma.com/small/';
-$PH_BASE_PATH_IMAGE_UPLOADS = 'http://sarashamma.com/uploads/';
 
+$PH_BASE_PATH_IMAGES = '/PhSara/assets/img/images/';
+$PH_BASE_PATH_IMAGE_SMALL = '/PhSara/assets/img/small/';
+$PH_BASE_PATH_IMAGE_UPLOADS = '/PhSara/assets/img/uploads/';
+/*
+  $PH_BASE_PATH_IMAGES = 'http://sarashamma.com/images/';
+  $PH_BASE_PATH_IMAGE_SMALL = 'http://sarashamma.com/small/';
+  $PH_BASE_PATH_IMAGE_UPLOADS = 'http://sarashamma.com/uploads/';
+ */
 $PH_SHARE_URL = 'http://sarashamma.com/2/';
 $PH_SHARE_PATH_IMAGES = 'http://sarashamma.com/images/';
 $PH_SHARE_PATH_IMAGE_SMALL = 'http://sarashamma.com/small/';
@@ -120,6 +120,7 @@ if ($nMode == 100 || $nMode == 0) {
     <link rel="stylesheet" href="<?php echo $PH_BASE_PATH_ASSETS; ?>plugins/jquery/slick.css">
     <link rel="stylesheet" href="<?php echo $PH_BASE_PATH_ASSETS; ?>plugins/font-awesome/font-awesome.css">
     <link rel="stylesheet" href="<?php echo $PH_BASE_PATH_ASSETS; ?>plugins/jquery/mCustomScrollbar/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="<?php echo $PH_BASE_PATH_ASSETS; ?>plugins/fancybox/jquery.fancybox.css">
     <link rel="stylesheet" href="<?php echo $PH_BASE_PATH_ASSETS; ?>plugins/slick/slick.css">
     <link rel="stylesheet" href="<?php echo $PH_BASE_PATH_ASSETS; ?>plugins/slick/slick-theme.css">
     <link rel="stylesheet" href="<?php echo $PH_BASE_PATH_CSS; ?>style.css">
@@ -137,6 +138,7 @@ if ($nMode == 100 || $nMode == 0) {
     <script src="<?php echo $PH_BASE_PATH_ASSETS; ?>plugins/bootstrap/js/bootstrap.js"></script>
     <script src="<?php echo $PH_BASE_PATH_ASSETS; ?>plugins/jquery/jquery.slim.min.js"></script>
     <script src="<?php echo $PH_BASE_PATH_ASSETS; ?>plugins/jquery/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="<?php echo $PH_BASE_PATH_ASSETS; ?>plugins/fancybox/jquery.fancybox.min.js"></script>
     <script src="<?php echo $PH_BASE_PATH_ASSETS; ?>plugins/slick/slick.js"></script>
     <script src="<?php echo $PH_BASE_PATH_ASSETS; ?>plugins/jquery/powerzoom/jquery.powerzoom.js"></script>
     <script src="<?php echo $PH_BASE_PATH_ASSETS; ?>js/scripts.js"></script>
