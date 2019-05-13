@@ -10,15 +10,15 @@ $PH_BASE_PATH_CSS = '/PhSara/assets/css/';
 $PH_BASE_PATH_IMG = '/PhSara/assets/img/';
 $PH_BASE_PATH_IMG_LOGO = '/PhSara/assets/img/logo/';
 $PH_BASE_PATH_IMG_ICONS = '/PhSara/assets/img/icons/';
-
-$PH_BASE_PATH_IMAGES = '/PhSara/assets/img/images/';
-$PH_BASE_PATH_IMAGE_SMALL = '/PhSara/assets/img/small/';
-$PH_BASE_PATH_IMAGE_UPLOADS = '/PhSara/assets/img/uploads/';
 /*
-  $PH_BASE_PATH_IMAGES = 'http://sarashamma.com/images/';
-  $PH_BASE_PATH_IMAGE_SMALL = 'http://sarashamma.com/small/';
-  $PH_BASE_PATH_IMAGE_UPLOADS = 'http://sarashamma.com/uploads/';
+  $PH_BASE_PATH_IMAGES = '/PhSara/assets/img/images/';
+  $PH_BASE_PATH_IMAGE_SMALL = '/PhSara/assets/img/small/';
+  $PH_BASE_PATH_IMAGE_UPLOADS = '/PhSara/assets/img/uploads/';
  */
+$PH_BASE_PATH_IMAGES = 'http://sarashamma.com/images/';
+$PH_BASE_PATH_IMAGE_SMALL = 'http://sarashamma.com/small/';
+$PH_BASE_PATH_IMAGE_UPLOADS = 'http://sarashamma.com/uploads/';
+
 $PH_SHARE_URL = 'http://sarashamma.com/2/';
 $PH_SHARE_PATH_IMAGES = 'http://sarashamma.com/images/';
 $PH_SHARE_PATH_IMAGE_SMALL = 'http://sarashamma.com/small/';
