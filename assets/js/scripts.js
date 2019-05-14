@@ -17,4 +17,10 @@ $(document).ready(function () {
     });
   }
 
+  $('#lightgallery').lightGallery({
+    share: false,
+    download: false,
+    counter: false
+  });
+
 });

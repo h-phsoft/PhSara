@@ -120,7 +120,7 @@ if ($nMode == 100 || $nMode == 0) {
     <link rel="stylesheet" href="<?php echo $PH_BASE_PATH_ASSETS; ?>plugins/jquery/slick.css">
     <link rel="stylesheet" href="<?php echo $PH_BASE_PATH_ASSETS; ?>plugins/font-awesome/font-awesome.css">
     <link rel="stylesheet" href="<?php echo $PH_BASE_PATH_ASSETS; ?>plugins/jquery/mCustomScrollbar/jquery.mCustomScrollbar.min.css">
-    <link rel="stylesheet" href="<?php echo $PH_BASE_PATH_ASSETS; ?>plugins/fancybox/jquery.fancybox.css">
+    <link rel="stylesheet" href="<?php echo $PH_BASE_PATH_ASSETS; ?>plugins/lightgallery/css/lightgallery.css">
     <link rel="stylesheet" href="<?php echo $PH_BASE_PATH_ASSETS; ?>plugins/slick/slick.css">
     <link rel="stylesheet" href="<?php echo $PH_BASE_PATH_ASSETS; ?>plugins/slick/slick-theme.css">
     <link rel="stylesheet" href="<?php echo $PH_BASE_PATH_CSS; ?>style.css">
@@ -138,7 +138,7 @@ if ($nMode == 100 || $nMode == 0) {
     <script src="<?php echo $PH_BASE_PATH_ASSETS; ?>plugins/bootstrap/js/bootstrap.js"></script>
     <script src="<?php echo $PH_BASE_PATH_ASSETS; ?>plugins/jquery/jquery.slim.min.js"></script>
     <script src="<?php echo $PH_BASE_PATH_ASSETS; ?>plugins/jquery/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="<?php echo $PH_BASE_PATH_ASSETS; ?>plugins/fancybox/jquery.fancybox.min.js"></script>
+    <script src="<?php echo $PH_BASE_PATH_ASSETS; ?>plugins/lightgallery/js/lightgallery-all.js"></script>
     <script src="<?php echo $PH_BASE_PATH_ASSETS; ?>plugins/slick/slick.js"></script>
     <script src="<?php echo $PH_BASE_PATH_ASSETS; ?>plugins/jquery/powerzoom/jquery.powerzoom.js"></script>
     <script src="<?php echo $PH_BASE_PATH_ASSETS; ?>js/scripts.js"></script>
