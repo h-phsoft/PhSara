@@ -21,20 +21,14 @@ $artWork = cArtWork::getInstance($nId);
   <section id="artworks">
     <div class="row mb-5 text-center">
       <div class="col-12 my-2 text-center">
-        <div class="powerzoomFrame">
-          <!--
-          <a href="<?php echo $PH_BASE_PATH_IMAGE_SMALL . $artWork->Art_Image ?>" data-fancybox>
-            <img id="artWork" src="<?php echo $PH_BASE_PATH_IMAGE_SMALL . $artWork->Art_Image ?>" />
-          </a>
-          -->
-          <ul id="lightgallery" class="list-unstyled row">
-            <li class="col-12" data-responsive="<?php echo $PH_BASE_PATH_IMAGE_SMALL . $artWork->Art_Image ?> 375, <?php echo $PH_BASE_PATH_IMAGE_SMALL . $artWork->Art_Image ?> 480, <?php echo $PH_BASE_PATH_IMAGE_SMALL . $artWork->Art_Image ?> 800" data-src="<?php echo $PH_BASE_PATH_IMAGE_SMALL . $artWork->Art_Image ?>" data-sub-html="">
-              <a href="">
-                <img id="artWork" class="img-responsive" src="<?php echo $PH_BASE_PATH_IMAGE_SMALL . $artWork->Art_Image ?>">
-              </a>
-            </li>
-          </ul>
-        </div>
+        <ul id="lightgallery" class="list-unstyled row">
+          <li class="col-12" data-responsive="<?php echo $PH_BASE_PATH_IMAGE_SMALL . $artWork->Art_Image ?> 375, <?php echo $PH_BASE_PATH_IMAGE_SMALL . $artWork->Art_Image ?> 480, <?php echo $PH_BASE_PATH_IMAGE_SMALL . $artWork->Art_Image ?> 800" data-src="<?php echo $PH_BASE_PATH_IMAGE_SMALL . $artWork->Art_Image ?>" data-sub-html="">
+            <a id="artWorkLink" href="">
+              <img id="artWork" class="img-responsive" src="<?php echo $PH_BASE_PATH_IMAGE_SMALL . $artWork->Art_Image ?>" style="width: 100%;">
+              <span class="maginfy"></span>
+            </a>
+          </li>
+        </ul>
       </div>
       <div class="col-12 my-3 text-center">
         <div><?php echo $artWork->Art_Title1; ?></div>

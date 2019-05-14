@@ -585,3 +585,29 @@ a.article:hover {
   color: white;
   background-color: #3b5998;
 }
+
+.maginfy {
+  content:'';
+  height: 64px;
+  width: 64px;
+  top: 50%;
+  right: 50%;
+  margin-right: -32px;
+  margin-top:-20px;
+  z-index: 99999;
+  position: absolute;
+  border: 2px solid #FFF;
+  border-radius: 50%;
+  transition: all .10s ease-in-out;
+  -moz-transition: all .10s ease-in-out;
+  -webkit-transition: all .10s ease-in-out;
+  pointer-events: none;
+  background-image: url('../img/icons/magnify.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  visibility: hidden;
+}
+
+#artWorkLink:hover .maginfy{
+  visibility: visible;
+}

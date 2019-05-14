@@ -83,7 +83,7 @@ if (count($exhib->aArtworks) > 0) {
             ?>
             <a href="<?php echo $PH_BASE_PATH . '?' . '2/' . $artWork->Art_Id; ?>" class="image_popup" rel="group" data-fancybox-title="">
               <div class="col-12 d-flex justify-content-center align-items-center" style="height: 75vh;">
-                <img id="" src="<?php echo $PH_BASE_PATH_IMAGE_SMALL . $artWork->Art_Image ?>" class="" data-artwork_id="" data-artwork_path="" alt="" style="max-height: 75vh; width: 100%; max-width: 98vw">
+                <img id="" src="<?php echo $PH_BASE_PATH_IMAGE_SMALL . $artWork->Art_Image ?>" class="" data-artwork_id="" data-artwork_path="" alt="" style="max-height: 75vh; max-width: 98vw">
               </div>
             </a>
             <?php
@@ -98,7 +98,7 @@ if (count($exhib->aArtworks) > 0) {
               ?>
               <a href="<?php echo $PH_BASE_PATH . '2/' . $artWork->Art_Id; ?>" class="image_popup" rel="group" data-fancybox-title="">
                 <div class="col-12 d-flex justify-content-center align-items-center" style="height: 75vh;">
-                  <img id="" src="<?php echo $PH_BASE_PATH_IMAGE_SMALL . $artWork->Art_Image ?>" class="" data-artwork_id="" data-artwork_path="" alt="" style="max-height: 75vh; width: 100%; max-width: 98vw">
+                  <img id="" src="<?php echo $PH_BASE_PATH_IMAGE_SMALL . $artWork->Art_Image ?>" class="" data-artwork_id="" data-artwork_path="" alt="" style="max-height: 75vh; max-width: 98vw">
                 </div>
               </a>
               <?php
@@ -133,7 +133,7 @@ if (count($exhib->aImages) > 0) {
           foreach ($exhib->aImages as $image) {
             ?>
             <div class="col-12 d-flex justify-content-center align-items-center" style="height: 75vh;">
-              <img src="<?php echo $PH_BASE_PATH_IMAGE_UPLOADS . $image->Exhib_Image ?>" style="max-height: 75vh; width: 100%; max-width: 98vw">
+              <img src="<?php echo $PH_BASE_PATH_IMAGE_UPLOADS . $image->Exhib_Image ?>" style="max-height: 75vh; max-width: 98vw">
             </div>
             <?php
           }
@@ -147,7 +147,7 @@ if (count($exhib->aImages) > 0) {
           foreach ($exhib->aImages as $image) {
             ?>
             <div class="col-12 d-flex justify-content-center align-items-center" style="height: 75vh;">
-              <img src="<?php echo $PH_BASE_PATH_IMAGE_UPLOADS . $image->Exhib_Image ?>" style="max-height: 75vh; width: 100%; max-width: 98vw">
+              <img src="<?php echo $PH_BASE_PATH_IMAGE_UPLOADS . $image->Exhib_Image ?>" style="max-height: 75vh; max-width: 98vw">
             </div>
             <?php
           }
