@@ -94,7 +94,7 @@ if ($nMode == 100 || $nMode == 0) {
   <head>
     <meta charset="utf-8">
     <title><?php echo $vTitle; ?></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=10.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="google" content="notranslate">
     <meta name="description" content="Sara Shamma is a renowned Syrian artist living and working in London UK, her practice focuses on death and humanity expressed mainly through self-portraits and children painted in a life-like visceral way. Working mainly from life and photographs, the artist uses oils to create a hyper realistic scene, using transparency lines and motion to portray a distant and deep void.">
     <meta name="keywords" content="">
