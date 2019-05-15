@@ -32,6 +32,13 @@ $PH_SHARE_PATH_IMAGE_UPLOADS = 'http://sarashamma.com/uploads/';
 ph_PrepareGets();
 ph_PreparePosts();
 
+$userAgen = ph_ServerVar('HTTP_USER_AGENT');
+if (preg_match('~MSIE|Internet Explorer~i', $userAgen) || (strpos($userAgen, 'Trident/7.0; rv:11.0') !== false)) {
+  $artWorkStyle = 'width: 100%; max-height: 100%;';
+} else {
+  $artWorkStyle = 'max-width: 100%; max-height: 100%;';
+}
+
 $nMode = '100';
 $nId = -1;
 $vURL = '';
