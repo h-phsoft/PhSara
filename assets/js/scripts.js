@@ -20,7 +20,8 @@ $(document).ready(function () {
   $('#lightgallery').lightGallery({
     share: false,
     download: false,
-    counter: false
+    counter: false,
+    scale: 0.5
   });
 
 });
