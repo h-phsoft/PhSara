@@ -25,7 +25,7 @@ define("EW_CONFIG_FILE_FOLDER", EW_PROJECT_NAME, TRUE); // Config file name
 define("EW_PROJECT_ID", "{7F488A10-5B18-4626-9FF1-A34951991D65}", TRUE); // Project ID (GUID)
 $EW_RELATED_PROJECT_ID = "";
 $EW_RELATED_LANGUAGE_FOLDER = "";
-define("EW_RANDOM_KEY", 'QJa412Zfpu8ifjI0', TRUE); // Random key for encryption
+define("EW_RANDOM_KEY", 'oPOqgf9IRXmmuOcc', TRUE); // Random key for encryption
 define("EW_PROJECT_STYLESHEET_FILENAME", "phpcss/PhSara.css", TRUE); // Project stylesheet file name
 define("EW_CHARSET", "utf-8", TRUE); // Project charset
 define("EW_EMAIL_CHARSET", EW_CHARSET, TRUE); // Email charset
@@ -77,7 +77,7 @@ if (!defined("EW_USE_MYSQLI"))
 	define('EW_USE_MYSQLI', extension_loaded("mysqli"), TRUE); // Use MySQLi
 if (!defined("EW_USE_MSSQL_NATIVE"))
 	define("EW_USE_MSSQL_NATIVE", FALSE, TRUE); // Use ADOdb "mssqlnative" driver for MSSQL
-$EW_CONN["DB"] = array("conn" => NULL, "id" => "DB", "type" => "MYSQL", "host" => "localhost", "port" => 3306, "user" => "root", "pass" => "", "db" => "phsaradb", "qs" => "`", "qe" => "`");
+$EW_CONN["DB"] = array("conn" => NULL, "id" => "DB", "type" => "MYSQL", "host" => "localhost", "port" => 3306, "user" => "phsoft_DML", "pass" => "PhS0ftDML97135", "db" => "phsoft_saradb", "qs" => "`", "qe" => "`");
 $EW_CONN[0] = &$EW_CONN["DB"];
 
 // Set up database error function
