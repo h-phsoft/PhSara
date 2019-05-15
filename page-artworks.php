@@ -100,7 +100,7 @@ $aSubjects = cSubject::getArray($vSubjCond);
       <div class="col-sm-4 col-md-3 mb-5 text-center">
         <a class="" href="<?php echo $PH_BASE_PATH . '?' . '2/' . $artWork->Art_Id; ?>">
           <div class="col-12 d-flex justify-content-center align-items-center" style="height: 250px;">
-            <img src="<?php echo $PH_BASE_PATH_IMAGE_SMALL . $artWork->Art_Image ?>" style="max-width: 100%; max-height: 100%;">
+            <img src="<?php echo $PH_BASE_PATH_IMAGE_SMALL . $artWork->Art_Image ?>" style="<?php echo $artWorkStyle; ?>">
           </div>
         </a>
         <div class="mt-3" style="font-style: italic"><?php echo $artWork->Art_Title1; ?></div>

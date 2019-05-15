@@ -10,11 +10,13 @@
     </div>
   </div>
   <div class="row mb-4">
-    <div class="col-12 col-sm-6 ">
+    <div class="col-12 col-sm-6 mx-auto">
       <div class="row mb-4">
+        <!--
         <div class="col-12 text-center">
           <h5>Contact the artist</h5>
         </div>
+        -->
         <div class="col-12">
           <form action="<?php echo $PH_BASE_PATH . '/mailsend'; ?>" method="POST">
             <div class="form-group">
@@ -36,6 +38,7 @@
         </div>
       </div>
     </div>
+    <!--
     <div class="col-12 col-sm-6">
       <div class="row mb-4">
         <div class="col-12 text-center">
@@ -62,5 +65,6 @@
         </div>
       </div>
     </div>
+    -->
   </div>
 </div>
