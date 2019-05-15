@@ -77,7 +77,7 @@ if (count($exhib->aArtworks) > 0) {
       <?php
       if (count($exhib->aArtworks) > 1) {
         ?>
-        <div class="container-fluid p-0 text-center variable slider">
+        <div class="container-fluid p-0 text-center slider">
           <?php
           foreach ($exhib->aArtworks as $artWork) {
             ?>
@@ -128,7 +128,7 @@ if (count($exhib->aImages) > 0) {
       <?php
       if (count($exhib->aImages) > 1) {
         ?>
-        <div class="container-fluid p-0 variable slider">
+        <div class="container-fluid p-0 slider">
           <?php
           foreach ($exhib->aImages as $image) {
             ?>

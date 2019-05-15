@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-  $(".variable").slick({
+  $(".slider").slick({
     dots: true,
     infinite: true,
     variableWidth: true,
