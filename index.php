@@ -27,6 +27,7 @@ $PH_SHARE_PATH_IMAGE_UPLOADS = 'http://sarashamma.com/uploads/';
 <?php include_once $PH_RELATIVE_PATH . "phmysql.php" ?>
 <?php include_once $PH_RELATIVE_PATH . "phfn.php" ?>
 <?php include_once $PH_RELATIVE_PATH . "cpfn.php" ?>
+<?php include_once $PH_RELATIVE_PATH . "PhModules/securimage/securimage.php" ?>
 <?php
 // Prepare Request variables
 ph_PrepareGets();
