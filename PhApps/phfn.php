@@ -22,17 +22,17 @@ include_once("PhModules/phpmailer527/class.phpmailer.php");
 
 // Function to send email
 function ph_SendEmail($sRecipients = array(
-    "From" => "",
-    "To" => "",
-    "Cc" => "",
-    "Bcc" => ""
-), $sSubject = "no Subject", $sMail = "", $SMTPOptions = array(
-    "PH_SMTP_SERVER" => "localhost",
-    "PH_SMTP_SERVER_PORT" => 25,
-    "PH_SMTP_SERVER_USERNAME" => "",
-    "PH_SMTP_SERVER_PASSWORD" => "",
-    "PH_SMTP_SERVER_SECURE" => ""
-), $arAttachments = array(), $sFormat = "", $sCharset = "UTF-8", $arImages = array(), $mail = NULL) {
+            "From" => "",
+            "To" => "",
+            "Cc" => "",
+            "Bcc" => ""
+        ), $sSubject = "no Subject", $sMail = "", $SMTPOptions = array(
+            "PH_SMTP_SERVER" => "localhost",
+            "PH_SMTP_SERVER_PORT" => 25,
+            "PH_SMTP_SERVER_USERNAME" => "",
+            "PH_SMTP_SERVER_PASSWORD" => "",
+            "PH_SMTP_SERVER_SECURE" => ""
+        ), $arAttachments = array(), $sFormat = "", $sCharset = "UTF-8", $arImages = array(), $mail = NULL) {
   $gsEmailErrDesc = '';
   $res = FALSE;
   if (is_null($mail)) {
@@ -239,6 +239,22 @@ if (!function_exists('ph_ServerVar')) {
 }
 
 /* * ****************************** */
+
+if (!function_exists('ph_ResetGets')) {
+
+  function ph_ResetGets() {
+    $_GET = array();
+  }
+
+}
+
+if (!function_exists('ph_ResetPosts')) {
+
+  function ph_ResetPosts() {
+    $_POST = array();
+  }
+
+}
 
 if (!function_exists('ph_PrepareGets')) {
 

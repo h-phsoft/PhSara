@@ -1,22 +1,24 @@
 <?php
+
 /**
  * PHPMaker 2018 configuration file
  */
-
 // Relative path
-if (!isset($EW_RELATIVE_PATH)) $EW_RELATIVE_PATH = "";
+if (!isset($EW_RELATIVE_PATH))
+  $EW_RELATIVE_PATH = "";
 
 // Show SQL for debug
 define("EW_DEBUG_ENABLED", FALSE, TRUE); // TRUE to debug
 if (EW_DEBUG_ENABLED) {
-	@ini_set("display_errors", "1"); // Display errors
-	error_reporting(E_ALL ^ E_NOTICE); // Report all errors except E_NOTICE
+  @ini_set("display_errors", "1"); // Display errors
+  error_reporting(E_ALL ^ E_NOTICE); // Report all errors except E_NOTICE
 }
 
 // General
 define("EW_IS_WINDOWS", (strtolower(substr(PHP_OS, 0, 3)) === 'win'), TRUE); // Is Windows OS
 define("EW_IS_PHP5", version_compare(PHP_VERSION, "5.4.0") >= 0, TRUE); // Is PHP 5.4 or later
-if (!EW_IS_PHP5) die("This script requires PHP 5.4 or later. You are running " . phpversion() . ".");
+if (!EW_IS_PHP5)
+  die("This script requires PHP 5.4 or later. You are running " . phpversion() . ".");
 define("EW_PATH_DELIMITER", ((EW_IS_WINDOWS) ? "\\" : "/"), TRUE); // Physical path delimiter
 $EW_ROOT_RELATIVE_PATH = "."; // Relative path of app root
 define("EW_UNFORMAT_YEAR", 50, TRUE); // Unformat year
@@ -32,19 +34,19 @@ define("EW_EMAIL_CHARSET", EW_CHARSET, TRUE); // Email charset
 define("EW_EMAIL_KEYWORD_SEPARATOR", "", TRUE); // Email keyword separator
 $EW_COMPOSITE_KEY_SEPARATOR = ","; // Composite key separator
 define("EW_HIGHLIGHT_COMPARE", TRUE, TRUE); // Highlight compare mode, TRUE(case-insensitive)|FALSE(case-sensitive)
-if (!function_exists('xml_parser_create') && !class_exists("DOMDocument")) die("This script requires PHP XML Parser or DOM.");
+if (!function_exists('xml_parser_create') && !class_exists("DOMDocument"))
+  die("This script requires PHP XML Parser or DOM.");
 define('EW_USE_DOM_XML', ((!function_exists('xml_parser_create') && class_exists("DOMDocument")) || FALSE), TRUE);
-if (!isset($ADODB_OUTP)) $ADODB_OUTP = 'ew_SetDebugMsg';
+if (!isset($ADODB_OUTP))
+  $ADODB_OUTP = 'ew_SetDebugMsg';
 define("EW_FONT_SIZE", 14, TRUE);
 define("EW_TMP_IMAGE_FONT", "DejaVuSans", TRUE); // Font for temp files
 $EW_LAZY_LOAD = TRUE; // Lazy loading of images
 $EW_RELATED_PROJECT_ID = "";
 $EW_BODY_CLASS = "hold-transition skin-red";
 $EW_RESET_HEIGHT = TRUE; // Reset layout height
-
 // Set up font path
 $EW_FONT_PATH = realpath('./phpfont'); // No trailing delimiter
-
 // External JavaScripts
 $EW_JAVASCRIPT_FILES = array();
 
@@ -53,31 +55,32 @@ $EW_STYLESHEET_FILES = array();
 
 // Authentication configuration for Google/Facebook
 $EW_AUTH_CONFIG = array(
-	"providers" => array(
-		"Google" => array(
-			"enabled" => false,
-			"keys" => array("id" => "", "secret" => "")
-		),
-		"Facebook" => array(
-			"enabled" => false,
-			"keys" => array("id" => "", "secret" => ""),
-			"trustForwarded" => FALSE
-		)
-	),
-	"debug_mode" => FALSE,
-	"debug_file" => "" // Path to file writable by the web server. Required if 'debug_mode' is not false
+    "providers" => array(
+        "Google" => array(
+            "enabled" => false,
+            "keys" => array("id" => "", "secret" => "")
+        ),
+        "Facebook" => array(
+            "enabled" => false,
+            "keys" => array("id" => "", "secret" => ""),
+            "trustForwarded" => FALSE
+        )
+    ),
+    "debug_mode" => FALSE,
+    "debug_file" => "" // Path to file writable by the web server. Required if 'debug_mode' is not false
 );
 
 // Database connection info
 if (!defined("EW_USE_ADODB"))
-	define("EW_USE_ADODB", FALSE, TRUE); // Use ADOdb
+  define("EW_USE_ADODB", FALSE, TRUE); // Use ADOdb
 if (!defined("EW_ADODB_TZ_OFFSET"))
-	define("EW_ADODB_TZ_OFFSET", FALSE, TRUE); // Use ADOdb time zone offset
+  define("EW_ADODB_TZ_OFFSET", FALSE, TRUE); // Use ADOdb time zone offset
 if (!defined("EW_USE_MYSQLI"))
-	define('EW_USE_MYSQLI', extension_loaded("mysqli"), TRUE); // Use MySQLi
+  define('EW_USE_MYSQLI', extension_loaded("mysqli"), TRUE); // Use MySQLi
 if (!defined("EW_USE_MSSQL_NATIVE"))
-	define("EW_USE_MSSQL_NATIVE", FALSE, TRUE); // Use ADOdb "mssqlnative" driver for MSSQL
+  define("EW_USE_MSSQL_NATIVE", FALSE, TRUE); // Use ADOdb "mssqlnative" driver for MSSQL
 $EW_CONN["DB"] = array("conn" => NULL, "id" => "DB", "type" => "MYSQL", "host" => "localhost", "port" => 3306, "user" => "phsoft_DML", "pass" => "PhS0ftDML97135", "db" => "phsoft_saradb", "qs" => "`", "qe" => "`");
+$EW_CONN["DB"] = array("conn" => NULL, "id" => "DB", "type" => "MYSQL", "host" => "localhost", "port" => 3306, "user" => "root", "pass" => "", "db" => "phsaradb", "qs" => "`", "qe" => "`");
 $EW_CONN[0] = &$EW_CONN["DB"];
 
 // Set up database error function
@@ -95,7 +98,6 @@ define("EW_CODEPAGE", 65001, TRUE); // Code page
 define("EW_ENCODING", "UTF-8", TRUE); // Character encoding
 define("EW_IS_DOUBLE_BYTE", in_array(EW_ENCODING, array("GBK", "BIG5", "SHIFT_JIS")), TRUE); // Double-byte character encoding
 define("EW_FILE_SYSTEM_ENCODING", "", TRUE); // File system encoding
-
 // Database
 define("EW_IS_MSACCESS", FALSE, TRUE); // Access
 define("EW_IS_MSSQL", FALSE, TRUE); // SQL Server
@@ -103,7 +105,7 @@ define("EW_IS_MYSQL", TRUE, TRUE); // MySQL
 define("EW_IS_POSTGRESQL", FALSE, TRUE); // PostgreSQL
 define("EW_IS_ORACLE", FALSE, TRUE); // Oracle
 if (!EW_IS_WINDOWS && (EW_IS_MSACCESS || EW_IS_MSSQL))
-	die("Microsoft Access or SQL Server is supported on Windows server only.");
+  die("Microsoft Access or SQL Server is supported on Windows server only.");
 define("EW_DB_QUOTE_START", "`", TRUE);
 define("EW_DB_QUOTE_END", "`", TRUE);
 /**
@@ -125,21 +127,18 @@ define("EW_CASE_SENSITIVE_PASSWORD", FALSE, TRUE); // Case-sensitive password
 /**
  * Remove XSS
  * Note: If you want to allow these keywords, remove them from the following EW_XSS_ARRAY at your own risks.
-*/
+ */
 define("EW_REMOVE_XSS", TRUE, TRUE);
 $EW_XSS_ARRAY = array('javascript', 'vbscript', 'expression', '<applet', '<meta', '<xml', '<blink', '<link', '<style', '<script', '<embed', '<object', '<iframe', '<frame', '<frameset', '<ilayer', '<layer', '<bgsound', '<title', '<base',
-'onabort', 'onactivate', 'onafterprint', 'onafterupdate', 'onbeforeactivate', 'onbeforecopy', 'onbeforecut', 'onbeforedeactivate', 'onbeforeeditfocus', 'onbeforepaste', 'onbeforeprint', 'onbeforeunload', 'onbeforeupdate', 'onblur', 'onbounce', 'oncellchange', 'onchange', 'onclick', 'oncontextmenu', 'oncontrolselect', 'oncopy', 'oncut', 'ondataavailable', 'ondatasetchanged', 'ondatasetcomplete', 'ondblclick', 'ondeactivate', 'ondrag', 'ondragend', 'ondragenter', 'ondragleave', 'ondragover', 'ondragstart', 'ondrop', 'onerror', 'onerrorupdate', 'onfilterchange', 'onfinish', 'onfocus', 'onfocusin', 'onfocusout', 'onhelp', 'onkeydown', 'onkeypress', 'onkeyup', 'onlayoutcomplete', 'onload', 'onlosecapture', 'onmousedown', 'onmouseenter', 'onmouseleave', 'onmousemove', 'onmouseout', 'onmouseover', 'onmouseup', 'onmousewheel', 'onmove', 'onmoveend', 'onmovestart', 'onpaste', 'onpropertychange', 'onreadystatechange', 'onreset', 'onresize', 'onresizeend', 'onresizestart', 'onrowenter', 'onrowexit', 'onrowsdelete', 'onrowsinserted', 'onscroll', 'onselect', 'onselectionchange', 'onselectstart', 'onstart', 'onstop', 'onsubmit', 'onunload');
+    'onabort', 'onactivate', 'onafterprint', 'onafterupdate', 'onbeforeactivate', 'onbeforecopy', 'onbeforecut', 'onbeforedeactivate', 'onbeforeeditfocus', 'onbeforepaste', 'onbeforeprint', 'onbeforeunload', 'onbeforeupdate', 'onblur', 'onbounce', 'oncellchange', 'onchange', 'onclick', 'oncontextmenu', 'oncontrolselect', 'oncopy', 'oncut', 'ondataavailable', 'ondatasetchanged', 'ondatasetcomplete', 'ondblclick', 'ondeactivate', 'ondrag', 'ondragend', 'ondragenter', 'ondragleave', 'ondragover', 'ondragstart', 'ondrop', 'onerror', 'onerrorupdate', 'onfilterchange', 'onfinish', 'onfocus', 'onfocusin', 'onfocusout', 'onhelp', 'onkeydown', 'onkeypress', 'onkeyup', 'onlayoutcomplete', 'onload', 'onlosecapture', 'onmousedown', 'onmouseenter', 'onmouseleave', 'onmousemove', 'onmouseout', 'onmouseover', 'onmouseup', 'onmousewheel', 'onmove', 'onmoveend', 'onmovestart', 'onpaste', 'onpropertychange', 'onreadystatechange', 'onreset', 'onresize', 'onresizeend', 'onresizestart', 'onrowenter', 'onrowexit', 'onrowsdelete', 'onrowsinserted', 'onscroll', 'onselect', 'onselectionchange', 'onselectstart', 'onstart', 'onstop', 'onsubmit', 'onunload');
 
 // Check Token
 define("EW_CHECK_TOKEN", TRUE, TRUE); // Check post token
-
 // Session timeout time
 define("EW_SESSION_TIMEOUT", 0, TRUE); // Session timeout time (minutes)
-
 // Session keep alive interval
 define("EW_SESSION_KEEP_ALIVE_INTERVAL", 0, TRUE); // Session keep alive interval (seconds)
 define("EW_SESSION_TIMEOUT_COUNTDOWN", 60, TRUE); // Session timeout count down interval (seconds)
-
 // Session names
 define("EW_SESSION_STATUS", EW_PROJECT_NAME . "_status", TRUE); // Login status
 define("EW_SESSION_USER_NAME", EW_SESSION_STATUS . "_UserName", TRUE); // User name
@@ -166,7 +165,6 @@ define("EW_SESSION_WARNING_MESSAGE", EW_PROJECT_NAME . "_Warning_Message", TRUE)
 define("EW_SESSION_INLINE_MODE", EW_PROJECT_NAME . "_InlineMode", TRUE); // Inline mode
 define("EW_SESSION_BREADCRUMB", EW_PROJECT_NAME . "_Breadcrumb", TRUE); // Breadcrumb
 define("EW_SESSION_TEMP_IMAGES", EW_PROJECT_NAME . "_TempImages", TRUE); // Temp images
-
 // Language settings
 define("EW_LANGUAGE_FOLDER", $EW_RELATIVE_PATH . "phplang/", TRUE);
 $EW_LANGUAGE_FILE = array();
@@ -202,20 +200,18 @@ define("EW_ROWTYPE_SEARCH", 4, TRUE); // Row type search
 define("EW_ROWTYPE_MASTER", 5, TRUE); // Row type master record
 define("EW_ROWTYPE_AGGREGATEINIT", 6, TRUE); // Row type aggregate init
 define("EW_ROWTYPE_AGGREGATE", 7, TRUE); // Row type aggregate
-
 // List actions
 define("EW_ACTION_POSTBACK", "P", TRUE); // Post back
 define("EW_ACTION_AJAX", "A", TRUE); // Ajax
 define("EW_ACTION_MULTIPLE", "M", TRUE); // Multiple records
 define("EW_ACTION_SINGLE", "S", TRUE); // Single record
-
 // Table parameters
 define("EW_TABLE_PREFIX", "||PHPReportMaker||", TRUE); // For backward compatibility only
 define("EW_TABLE_REC_PER_PAGE", "recperpage", TRUE); // Records per page
 define("EW_TABLE_START_REC", "start", TRUE); // Start record
 define("EW_TABLE_PAGE_NO", "pageno", TRUE); // Page number
 define("EW_TABLE_BASIC_SEARCH", "psearch", TRUE); // Basic search keyword
-define("EW_TABLE_BASIC_SEARCH_TYPE","psearchtype", TRUE); // Basic search type
+define("EW_TABLE_BASIC_SEARCH_TYPE", "psearchtype", TRUE); // Basic search type
 define("EW_TABLE_ADVANCED_SEARCH", "advsrch", TRUE); // Advanced search
 define("EW_TABLE_SEARCH_WHERE", "searchwhere", TRUE); // Search where clause
 define("EW_TABLE_WHERE", "where", TRUE); // Table where
@@ -231,7 +227,6 @@ define("EW_TABLE_DETAIL_TABLE", "detailtable", TRUE); // Detail table
 define("EW_TABLE_RETURN_URL", "return", TRUE); // Return URL
 define("EW_TABLE_EXPORT_RETURN_URL", "exportreturn", TRUE); // Export return URL
 define("EW_TABLE_GRID_ADD_ROW_COUNT", "gridaddcnt", TRUE); // Grid add row count
-
 // Audit Trail
 define("EW_AUDIT_TRAIL_TO_DATABASE", FALSE, TRUE); // Write audit trail to DB
 define("EW_AUDIT_TRAIL_DBID", "DB", TRUE); // Audit trail DBID
@@ -246,7 +241,6 @@ define("EW_AUDIT_TRAIL_FIELD_NAME_FIELD", "", TRUE); // Audit trail Field field 
 define("EW_AUDIT_TRAIL_FIELD_NAME_KEYVALUE", "", TRUE); // Audit trail Key Value field name
 define("EW_AUDIT_TRAIL_FIELD_NAME_OLDVALUE", "", TRUE); // Audit trail Old Value field name
 define("EW_AUDIT_TRAIL_FIELD_NAME_NEWVALUE", "", TRUE); // Audit trail New Value field name
-
 // Security
 define("EW_ADMIN_USER_NAME", "PhSoft", TRUE); // Administrator user name
 define("EW_ADMIN_PASSWORD", "OneGod165", TRUE); // Administrator password
@@ -255,7 +249,6 @@ define("EW_ALLOW_LOGIN_BY_URL", FALSE, TRUE); // Allow login by URL
 define("EW_ALLOW_LOGIN_BY_SESSION", FALSE, TRUE); // Allow login by session variables
 define("EW_PHPASS_ITERATION_COUNT_LOG2", "[10,8]", TRUE); // Note: Use JSON array syntax
 define("EW_PASSWORD_HASH", FALSE, TRUE); // Use PHP 5.5+ password hashing functions
-
 // User level constants
 define("EW_ALLOW_ADD", 1, TRUE); // Add
 define("EW_ALLOW_DELETE", 2, TRUE); // Delete
@@ -264,18 +257,17 @@ define("EW_ALLOW_EDIT", 4, TRUE); // Edit
 @define("EW_ALLOW_REPORT", 8, TRUE); // Report
 @define("EW_ALLOW_ADMIN", 16, TRUE); // Admin
 if (defined("EW_USER_LEVEL_COMPAT")) {
-	define("EW_ALLOW_VIEW", 8, TRUE); // View
-	define("EW_ALLOW_SEARCH", 8, TRUE); // Search
-	define("EW_ALLOW_ALL", 31, TRUE); // All (1 + 2 + 4 + 8 + 16)
+  define("EW_ALLOW_VIEW", 8, TRUE); // View
+  define("EW_ALLOW_SEARCH", 8, TRUE); // Search
+  define("EW_ALLOW_ALL", 31, TRUE); // All (1 + 2 + 4 + 8 + 16)
 } else {
-	define("EW_ALLOW_VIEW", 32, TRUE); // View
-	define("EW_ALLOW_SEARCH", 64, TRUE); // Search
-	define("EW_ALLOW_ALL", 127, TRUE); // All (1 + 2 + 4 + 8 + 16 + 32 + 64)
+  define("EW_ALLOW_VIEW", 32, TRUE); // View
+  define("EW_ALLOW_SEARCH", 64, TRUE); // Search
+  define("EW_ALLOW_ALL", 127, TRUE); // All (1 + 2 + 4 + 8 + 16 + 32 + 64)
 }
 
 // Hierarchical User ID
 @define("EW_USER_ID_IS_HIERARCHICAL", TRUE, TRUE); // Change to FALSE to show one level only
-
 // Use subquery for master/detail
 define("EW_USE_SUBQUERY_FOR_MASTER_USER_ID", FALSE, TRUE);
 define("EW_USER_ID_ALLOW", 104, TRUE);
@@ -324,7 +316,6 @@ define("EW_EMAIL_NOTIFY_TEMPLATE", "notify.html", TRUE);
 define("EW_EMAIL_REGISTER_TEMPLATE", "register.html", TRUE);
 define("EW_EMAIL_RESETPWD_TEMPLATE", "resetpwd.html", TRUE);
 define("EW_EMAIL_TEMPLATE_PATH", "phphtml", TRUE); // Template path
-
 // Remote file
 $EW_REMOTE_FILE_PATTERN = '/^((https?\:)?|ftps?\:|s3:)\/\//i';
 
@@ -354,7 +345,6 @@ define("EW_UPLOAD_TMP_PATH", "", TRUE); // User upload temp path (relative to ap
 define("EW_UPLOAD_CONVERT_ACCENTED_CHARS", FALSE, TRUE); // Convert accented chars in upload file name
 define("EW_USE_COLORBOX", TRUE, TRUE); // Use Colorbox
 define("EW_MULTIPLE_UPLOAD_SEPARATOR", ",", TRUE); // Multiple upload separator
-
 // Image resize
 $EW_THUMBNAIL_CLASS = "cThumbnail";
 define("EW_REDUCE_IMAGE_ONLY", TRUE, TRUE);
@@ -363,7 +353,6 @@ $EW_RESIZE_OPTIONS = array("keepAspectRatio" => EW_KEEP_ASPECT_RATIO, "resizeUp"
 
 // Audit trail
 define("EW_AUDIT_TRAIL_PATH", "", TRUE); // Audit trail path (relative to app root)
-
 // Export records
 define("EW_EXPORT_ALL", TRUE, TRUE); // Export all records
 define("EW_EXPORT_ALL_TIME_LIMIT", 120, TRUE); // Export all records time limit
@@ -376,411 +365,411 @@ define("EW_EXPORT_MASTER_RECORD_FOR_CSV", FALSE, TRUE); // TRUE to export master
 define("EW_EXPORT_DETAIL_RECORDS", TRUE, TRUE); // TRUE to export detail records
 define("EW_EXPORT_DETAIL_RECORDS_FOR_CSV", FALSE, TRUE); // TRUE to export detail records for CSV
 $EW_EXPORT = array(
-	"email" => "cExportEmail",
-	"html" => "cExportHtml",
-	"word" => "cExportWord",
-	"excel" => "cExportExcel",
-	"pdf" => "cExportPdf",
-	"csv" => "cExportCsv",
-	"xml" => "cExportXml",
-	"json" => "cExportJson"
+    "email" => "cExportEmail",
+    "html" => "cExportHtml",
+    "word" => "cExportWord",
+    "excel" => "cExportExcel",
+    "pdf" => "cExportPdf",
+    "csv" => "cExportCsv",
+    "xml" => "cExportXml",
+    "json" => "cExportJson"
 );
 
 // Export records for reports
 $EW_EXPORT_REPORT = array(
-	"print" => "ExportReportHtml",
-	"html" => "ExportReportHtml",
-	"word" => "ExportReportWord",
-	"excel" => "ExportReportExcel"
+    "print" => "ExportReportHtml",
+    "html" => "ExportReportHtml",
+    "word" => "ExportReportWord",
+    "excel" => "ExportReportExcel"
 );
 
 // Full URL protocols ("http" or "https")
 $EW_FULL_URL_PROTOCOLS = array(
-	"href" => "", // field hyperlink
-	"upload" => "", // ewupload page
-	"resetpwd" => "", // reset password
-	"activate" => "", // register page activate link
-	"tmpfile" => "", // upload temp file
-	"auth" => "" // OAuth base URL
+    "href" => "", // field hyperlink
+    "upload" => "", // ewupload page
+    "resetpwd" => "", // reset password
+    "activate" => "", // register page activate link
+    "tmpfile" => "", // upload temp file
+    "auth" => "" // OAuth base URL
 );
 
 // MIME types
 $EW_MIME_TYPES = array(
-	"323" => "text/h323",
-	"3g2" => "video/3gpp2",
-	"3gp2" => "video/3gpp2",
-	"3gp" => "video/3gpp",
-	"3gpp" => "video/3gpp",
-	"aac" => "audio/aac",
-	"aaf" => "application/octet-stream",
-	"aca" => "application/octet-stream",
-	"accdb" => "application/msaccess",
-	"accde" => "application/msaccess",
-	"accdt" => "application/msaccess",
-	"acx" => "application/internet-property-stream",
-	"adt" => "audio/vnd.dlna.adts",
-	"adts" => "audio/vnd.dlna.adts",
-	"afm" => "application/octet-stream",
-	"ai" => "application/postscript",
-	"aif" => "audio/x-aiff",
-	"aifc" => "audio/aiff",
-	"aiff" => "audio/aiff",
-	"appcache" => "text/cache-manifest",
-	"application" => "application/x-ms-application",
-	"art" => "image/x-jg",
-	"asd" => "application/octet-stream",
-	"asf" => "video/x-ms-asf",
-	"asi" => "application/octet-stream",
-	"asm" => "text/plain",
-	"asr" => "video/x-ms-asf",
-	"asx" => "video/x-ms-asf",
-	"atom" => "application/atom+xml",
-	"au" => "audio/basic",
-	"avi" => "video/x-msvideo",
-	"axs" => "application/olescript",
-	"bas" => "text/plain",
-	"bcpio" => "application/x-bcpio",
-	"bin" => "application/octet-stream",
-	"bmp" => "image/bmp",
-	"c" => "text/plain",
-	"cab" => "application/vnd.ms-cab-compressed",
-	"calx" => "application/vnd.ms-office.calx",
-	"cat" => "application/vnd.ms-pki.seccat",
-	"cdf" => "application/x-cdf",
-	"chm" => "application/octet-stream",
-	"class" => "application/x-java-applet",
-	"clp" => "application/x-msclip",
-	"cmx" => "image/x-cmx",
-	"cnf" => "text/plain",
-	"cod" => "image/cis-cod",
-	"cpio" => "application/x-cpio",
-	"cpp" => "text/plain",
-	"crd" => "application/x-mscardfile",
-	"crl" => "application/pkix-crl",
-	"crt" => "application/x-x509-ca-cert",
-	"csh" => "application/x-csh",
-	"css" => "text/css",
-	"csv" => "application/octet-stream",
-	"cur" => "application/octet-stream",
-	"dcr" => "application/x-director",
-	"deploy" => "application/octet-stream",
-	"der" => "application/x-x509-ca-cert",
-	"dib" => "image/bmp",
-	"dir" => "application/x-director",
-	"disco" => "text/xml",
-	"dlm" => "text/dlm",
-	"doc" => "application/msword",
-	"docm" => "application/vnd.ms-word.document.macroEnabled.12",
-	"docx" => "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-	"dot" => "application/msword",
-	"dotm" => "application/vnd.ms-word.template.macroEnabled.12",
-	"dotx" => "application/vnd.openxmlformats-officedocument.wordprocessingml.template",
-	"dsp" => "application/octet-stream",
-	"dtd" => "text/xml",
-	"dvi" => "application/x-dvi",
-	"dvr-ms" => "video/x-ms-dvr",
-	"dwf" => "drawing/x-dwf",
-	"dwp" => "application/octet-stream",
-	"dxr" => "application/x-director",
-	"eml" => "message/rfc822",
-	"emz" => "application/octet-stream",
-	"eot" => "application/vnd.ms-fontobject",
-	"eps" => "application/postscript",
-	"etx" => "text/x-setext",
-	"evy" => "application/envoy",
-	"fdf" => "application/vnd.fdf",
-	"fif" => "application/fractals",
-	"fla" => "application/octet-stream",
-	"flr" => "x-world/x-vrml",
-	"flv" => "video/x-flv",
-	"gif" => "image/gif",
-	"gtar" => "application/x-gtar",
-	"gz" => "application/x-gzip",
-	"h" => "text/plain",
-	"hdf" => "application/x-hdf",
-	"hdml" => "text/x-hdml",
-	"hhc" => "application/x-oleobject",
-	"hhk" => "application/octet-stream",
-	"hhp" => "application/octet-stream",
-	"hlp" => "application/winhlp",
-	"hqx" => "application/mac-binhex40",
-	"hta" => "application/hta",
-	"htc" => "text/x-component",
-	"htm" => "text/html",
-	"html" => "text/html",
-	"htt" => "text/webviewhtml",
-	"hxt" => "text/html",
-	"ical" => "text/calendar",
-	"icalendar" => "text/calendar",
-	"ico" => "image/x-icon",
-	"ics" => "text/calendar",
-	"ief" => "image/ief",
-	"ifb" => "text/calendar",
-	"iii" => "application/x-iphone",
-	"inf" => "application/octet-stream",
-	"ins" => "application/x-internet-signup",
-	"isp" => "application/x-internet-signup",
-	"IVF" => "video/x-ivf",
-	"jar" => "application/java-archive",
-	"java" => "application/octet-stream",
-	"jck" => "application/liquidmotion",
-	"jcz" => "application/liquidmotion",
-	"jfif" => "image/pjpeg",
-	"jpb" => "application/octet-stream",
-	"jpg" => "image/jpeg", // Note: Use "jpg" first
-	"jpeg" => "image/jpeg",
-	"jpe" => "image/jpeg",
-	"js" => "application/javascript",
-	"json" => "application/json",
-	"jsx" => "text/jscript",
-	"latex" => "application/x-latex",
-	"lit" => "application/x-ms-reader",
-	"lpk" => "application/octet-stream",
-	"lsf" => "video/x-la-asf",
-	"lsx" => "video/x-la-asf",
-	"lzh" => "application/octet-stream",
-	"m13" => "application/x-msmediaview",
-	"m14" => "application/x-msmediaview",
-	"m1v" => "video/mpeg",
-	"m2ts" => "video/vnd.dlna.mpeg-tts",
-	"m3u" => "audio/x-mpegurl",
-	"m4a" => "audio/mp4",
-	"m4v" => "video/mp4",
-	"man" => "application/x-troff-man",
-	"manifest" => "application/x-ms-manifest",
-	"map" => "text/plain",
-	"mdb" => "application/x-msaccess",
-	"mdp" => "application/octet-stream",
-	"me" => "application/x-troff-me",
-	"mht" => "message/rfc822",
-	"mhtml" => "message/rfc822",
-	"mid" => "audio/mid",
-	"midi" => "audio/mid",
-	"mix" => "application/octet-stream",
-	"mmf" => "application/x-smaf",
-	"mno" => "text/xml",
-	"mny" => "application/x-msmoney",
-	"mov" => "video/quicktime",
-	"movie" => "video/x-sgi-movie",
-	"mp2" => "video/mpeg",
-	"mp3" => "audio/mpeg",
-	"mp4" => "video/mp4",
-	"mp4v" => "video/mp4",
-	"mpa" => "video/mpeg",
-	"mpe" => "video/mpeg",
-	"mpeg" => "video/mpeg",
-	"mpg" => "video/mpeg",
-	"mpp" => "application/vnd.ms-project",
-	"mpv2" => "video/mpeg",
-	"ms" => "application/x-troff-ms",
-	"msi" => "application/octet-stream",
-	"mso" => "application/octet-stream",
-	"mvb" => "application/x-msmediaview",
-	"mvc" => "application/x-miva-compiled",
-	"nc" => "application/x-netcdf",
-	"nsc" => "video/x-ms-asf",
-	"nws" => "message/rfc822",
-	"ocx" => "application/octet-stream",
-	"oda" => "application/oda",
-	"odc" => "text/x-ms-odc",
-	"ods" => "application/oleobject",
-	"oga" => "audio/ogg",
-	"ogg" => "video/ogg",
-	"ogv" => "video/ogg",
-	"ogx" => "application/ogg",
-	"one" => "application/onenote",
-	"onea" => "application/onenote",
-	"onetoc" => "application/onenote",
-	"onetoc2" => "application/onenote",
-	"onetmp" => "application/onenote",
-	"onepkg" => "application/onenote",
-	"osdx" => "application/opensearchdescription+xml",
-	"otf" => "font/otf",
-	"p10" => "application/pkcs10",
-	"p12" => "application/x-pkcs12",
-	"p7b" => "application/x-pkcs7-certificates",
-	"p7c" => "application/pkcs7-mime",
-	"p7m" => "application/pkcs7-mime",
-	"p7r" => "application/x-pkcs7-certreqresp",
-	"p7s" => "application/pkcs7-signature",
-	"pbm" => "image/x-portable-bitmap",
-	"pcx" => "application/octet-stream",
-	"pcz" => "application/octet-stream",
-	"pdf" => "application/pdf",
-	"pfb" => "application/octet-stream",
-	"pfm" => "application/octet-stream",
-	"pfx" => "application/x-pkcs12",
-	"pgm" => "image/x-portable-graymap",
-	"pko" => "application/vnd.ms-pki.pko",
-	"pma" => "application/x-perfmon",
-	"pmc" => "application/x-perfmon",
-	"pml" => "application/x-perfmon",
-	"pmr" => "application/x-perfmon",
-	"pmw" => "application/x-perfmon",
-	"png" => "image/png",
-	"pnm" => "image/x-portable-anymap",
-	"pnz" => "image/png",
-	"pot" => "application/vnd.ms-powerpoint",
-	"potm" => "application/vnd.ms-powerpoint.template.macroEnabled.12",
-	"potx" => "application/vnd.openxmlformats-officedocument.presentationml.template",
-	"ppam" => "application/vnd.ms-powerpoint.addin.macroEnabled.12",
-	"ppm" => "image/x-portable-pixmap",
-	"pps" => "application/vnd.ms-powerpoint",
-	"ppsm" => "application/vnd.ms-powerpoint.slideshow.macroEnabled.12",
-	"ppsx" => "application/vnd.openxmlformats-officedocument.presentationml.slideshow",
-	"ppt" => "application/vnd.ms-powerpoint",
-	"pptm" => "application/vnd.ms-powerpoint.presentation.macroEnabled.12",
-	"pptx" => "application/vnd.openxmlformats-officedocument.presentationml.presentation",
-	"prf" => "application/pics-rules",
-	"prm" => "application/octet-stream",
-	"prx" => "application/octet-stream",
-	"ps" => "application/postscript",
-	"psd" => "application/octet-stream",
-	"psm" => "application/octet-stream",
-	"psp" => "application/octet-stream",
-	"pub" => "application/x-mspublisher",
-	"qt" => "video/quicktime",
-	"qtl" => "application/x-quicktimeplayer",
-	"qxd" => "application/octet-stream",
-	"ra" => "audio/x-pn-realaudio",
-	"ram" => "audio/x-pn-realaudio",
-	"rar" => "application/octet-stream",
-	"ras" => "image/x-cmu-raster",
-	"rf" => "image/vnd.rn-realflash",
-	"rgb" => "image/x-rgb",
-	"rm" => "application/vnd.rn-realmedia",
-	"rmi" => "audio/mid",
-	"roff" => "application/x-troff",
-	"rpm" => "audio/x-pn-realaudio-plugin",
-	"rtf" => "application/rtf",
-	"rtx" => "text/richtext",
-	"scd" => "application/x-msschedule",
-	"sct" => "text/scriptlet",
-	"sea" => "application/octet-stream",
-	"setpay" => "application/set-payment-initiation",
-	"setreg" => "application/set-registration-initiation",
-	"sgml" => "text/sgml",
-	"sh" => "application/x-sh",
-	"shar" => "application/x-shar",
-	"sit" => "application/x-stuffit",
-	"sldm" => "application/vnd.ms-powerpoint.slide.macroEnabled.12",
-	"sldx" => "application/vnd.openxmlformats-officedocument.presentationml.slide",
-	"smd" => "audio/x-smd",
-	"smi" => "application/octet-stream",
-	"smx" => "audio/x-smd",
-	"smz" => "audio/x-smd",
-	"snd" => "audio/basic",
-	"snp" => "application/octet-stream",
-	"spc" => "application/x-pkcs7-certificates",
-	"spl" => "application/futuresplash",
-	"spx" => "audio/ogg",
-	"src" => "application/x-wais-source",
-	"ssm" => "application/streamingmedia",
-	"sst" => "application/vnd.ms-pki.certstore",
-	"stl" => "application/vnd.ms-pki.stl",
-	"sv4cpio" => "application/x-sv4cpio",
-	"sv4crc" => "application/x-sv4crc",
-	"svg" => "image/svg+xml",
-	"svgz" => "image/svg+xml",
-	"swf" => "application/x-shockwave-flash",
-	"t" => "application/x-troff",
-	"tar" => "application/x-tar",
-	"tcl" => "application/x-tcl",
-	"tex" => "application/x-tex",
-	"texi" => "application/x-texinfo",
-	"texinfo" => "application/x-texinfo",
-	"tgz" => "application/x-compressed",
-	"thmx" => "application/vnd.ms-officetheme",
-	"thn" => "application/octet-stream",
-	"tif" => "image/tiff",
-	"tiff" => "image/tiff",
-	"toc" => "application/octet-stream",
-	"tr" => "application/x-troff",
-	"trm" => "application/x-msterminal",
-	"ts" => "video/vnd.dlna.mpeg-tts",
-	"tsv" => "text/tab-separated-values",
-	"ttc" => "application/x-font-ttf",
-	"ttf" => "application/x-font-ttf",
-	"tts" => "video/vnd.dlna.mpeg-tts",
-	"txt" => "text/plain",
-	"u32" => "application/octet-stream",
-	"uls" => "text/iuls",
-	"ustar" => "application/x-ustar",
-	"vbs" => "text/vbscript",
-	"vcf" => "text/x-vcard",
-	"vcs" => "text/plain",
-	"vdx" => "application/vnd.ms-visio.viewer",
-	"vml" => "text/xml",
-	"vsd" => "application/vnd.visio",
-	"vss" => "application/vnd.visio",
-	"vst" => "application/vnd.visio",
-	"vsto" => "application/x-ms-vsto",
-	"vsw" => "application/vnd.visio",
-	"vsx" => "application/vnd.visio",
-	"vtx" => "application/vnd.visio",
-	"wav" => "audio/wav",
-	"wax" => "audio/x-ms-wax",
-	"wbmp" => "image/vnd.wap.wbmp",
-	"wcm" => "application/vnd.ms-works",
-	"wdb" => "application/vnd.ms-works",
-	"webm" => "video/webm",
-	"webp" => "image/webp",
-	"wks" => "application/vnd.ms-works",
-	"wm" => "video/x-ms-wm",
-	"wma" => "audio/x-ms-wma",
-	"wmd" => "application/x-ms-wmd",
-	"wmf" => "application/x-msmetafile",
-	"wml" => "text/vnd.wap.wml",
-	"wmlc" => "application/vnd.wap.wmlc",
-	"wmls" => "text/vnd.wap.wmlscript",
-	"wmlsc" => "application/vnd.wap.wmlscriptc",
-	"wmp" => "video/x-ms-wmp",
-	"wmv" => "video/x-ms-wmv",
-	"wmx" => "video/x-ms-wmx",
-	"wmz" => "application/x-ms-wmz",
-	"woff" => "application/font-woff",
-	"woff2" => "application/font-woff2",
-	"wps" => "application/vnd.ms-works",
-	"wri" => "application/x-mswrite",
-	"wrl" => "x-world/x-vrml",
-	"wrz" => "x-world/x-vrml",
-	"wsdl" => "text/xml",
-	"wtv" => "video/x-ms-wtv",
-	"wvx" => "video/x-ms-wvx",
-	"x" => "application/directx",
-	"xaf" => "x-world/x-vrml",
-	"xaml" => "application/xaml+xml",
-	"xap" => "application/x-silverlight-app",
-	"xbap" => "application/x-ms-xbap",
-	"xbm" => "image/x-xbitmap",
-	"xdr" => "text/plain",
-	"xht" => "application/xhtml+xml",
-	"xhtml" => "application/xhtml+xml",
-	"xla" => "application/vnd.ms-excel",
-	"xlam" => "application/vnd.ms-excel.addin.macroEnabled.12",
-	"xlc" => "application/vnd.ms-excel",
-	"xlm" => "application/vnd.ms-excel",
-	"xls" => "application/vnd.ms-excel",
-	"xlsb" => "application/vnd.ms-excel.sheet.binary.macroEnabled.12",
-	"xlsm" => "application/vnd.ms-excel.sheet.macroEnabled.12",
-	"xlsx" => "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-	"xlt" => "application/vnd.ms-excel",
-	"xltm" => "application/vnd.ms-excel.template.macroEnabled.12",
-	"xltx" => "application/vnd.openxmlformats-officedocument.spreadsheetml.template",
-	"xlw" => "application/vnd.ms-excel",
-	"xml" => "text/xml",
-	"xof" => "x-world/x-vrml",
-	"xpm" => "image/x-xpixmap",
-	"xps" => "application/vnd.ms-xpsdocument",
-	"xsd" => "text/xml",
-	"xsf" => "text/xml",
-	"xsl" => "text/xml",
-	"xslt" => "text/xml",
-	"xsn" => "application/octet-stream",
-	"xtp" => "application/octet-stream",
-	"xwd" => "image/x-xwindowdump",
-	"z" => "application/x-compress",
-	"zip" => "application/x-zip-compressed"
+    "323" => "text/h323",
+    "3g2" => "video/3gpp2",
+    "3gp2" => "video/3gpp2",
+    "3gp" => "video/3gpp",
+    "3gpp" => "video/3gpp",
+    "aac" => "audio/aac",
+    "aaf" => "application/octet-stream",
+    "aca" => "application/octet-stream",
+    "accdb" => "application/msaccess",
+    "accde" => "application/msaccess",
+    "accdt" => "application/msaccess",
+    "acx" => "application/internet-property-stream",
+    "adt" => "audio/vnd.dlna.adts",
+    "adts" => "audio/vnd.dlna.adts",
+    "afm" => "application/octet-stream",
+    "ai" => "application/postscript",
+    "aif" => "audio/x-aiff",
+    "aifc" => "audio/aiff",
+    "aiff" => "audio/aiff",
+    "appcache" => "text/cache-manifest",
+    "application" => "application/x-ms-application",
+    "art" => "image/x-jg",
+    "asd" => "application/octet-stream",
+    "asf" => "video/x-ms-asf",
+    "asi" => "application/octet-stream",
+    "asm" => "text/plain",
+    "asr" => "video/x-ms-asf",
+    "asx" => "video/x-ms-asf",
+    "atom" => "application/atom+xml",
+    "au" => "audio/basic",
+    "avi" => "video/x-msvideo",
+    "axs" => "application/olescript",
+    "bas" => "text/plain",
+    "bcpio" => "application/x-bcpio",
+    "bin" => "application/octet-stream",
+    "bmp" => "image/bmp",
+    "c" => "text/plain",
+    "cab" => "application/vnd.ms-cab-compressed",
+    "calx" => "application/vnd.ms-office.calx",
+    "cat" => "application/vnd.ms-pki.seccat",
+    "cdf" => "application/x-cdf",
+    "chm" => "application/octet-stream",
+    "class" => "application/x-java-applet",
+    "clp" => "application/x-msclip",
+    "cmx" => "image/x-cmx",
+    "cnf" => "text/plain",
+    "cod" => "image/cis-cod",
+    "cpio" => "application/x-cpio",
+    "cpp" => "text/plain",
+    "crd" => "application/x-mscardfile",
+    "crl" => "application/pkix-crl",
+    "crt" => "application/x-x509-ca-cert",
+    "csh" => "application/x-csh",
+    "css" => "text/css",
+    "csv" => "application/octet-stream",
+    "cur" => "application/octet-stream",
+    "dcr" => "application/x-director",
+    "deploy" => "application/octet-stream",
+    "der" => "application/x-x509-ca-cert",
+    "dib" => "image/bmp",
+    "dir" => "application/x-director",
+    "disco" => "text/xml",
+    "dlm" => "text/dlm",
+    "doc" => "application/msword",
+    "docm" => "application/vnd.ms-word.document.macroEnabled.12",
+    "docx" => "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "dot" => "application/msword",
+    "dotm" => "application/vnd.ms-word.template.macroEnabled.12",
+    "dotx" => "application/vnd.openxmlformats-officedocument.wordprocessingml.template",
+    "dsp" => "application/octet-stream",
+    "dtd" => "text/xml",
+    "dvi" => "application/x-dvi",
+    "dvr-ms" => "video/x-ms-dvr",
+    "dwf" => "drawing/x-dwf",
+    "dwp" => "application/octet-stream",
+    "dxr" => "application/x-director",
+    "eml" => "message/rfc822",
+    "emz" => "application/octet-stream",
+    "eot" => "application/vnd.ms-fontobject",
+    "eps" => "application/postscript",
+    "etx" => "text/x-setext",
+    "evy" => "application/envoy",
+    "fdf" => "application/vnd.fdf",
+    "fif" => "application/fractals",
+    "fla" => "application/octet-stream",
+    "flr" => "x-world/x-vrml",
+    "flv" => "video/x-flv",
+    "gif" => "image/gif",
+    "gtar" => "application/x-gtar",
+    "gz" => "application/x-gzip",
+    "h" => "text/plain",
+    "hdf" => "application/x-hdf",
+    "hdml" => "text/x-hdml",
+    "hhc" => "application/x-oleobject",
+    "hhk" => "application/octet-stream",
+    "hhp" => "application/octet-stream",
+    "hlp" => "application/winhlp",
+    "hqx" => "application/mac-binhex40",
+    "hta" => "application/hta",
+    "htc" => "text/x-component",
+    "htm" => "text/html",
+    "html" => "text/html",
+    "htt" => "text/webviewhtml",
+    "hxt" => "text/html",
+    "ical" => "text/calendar",
+    "icalendar" => "text/calendar",
+    "ico" => "image/x-icon",
+    "ics" => "text/calendar",
+    "ief" => "image/ief",
+    "ifb" => "text/calendar",
+    "iii" => "application/x-iphone",
+    "inf" => "application/octet-stream",
+    "ins" => "application/x-internet-signup",
+    "isp" => "application/x-internet-signup",
+    "IVF" => "video/x-ivf",
+    "jar" => "application/java-archive",
+    "java" => "application/octet-stream",
+    "jck" => "application/liquidmotion",
+    "jcz" => "application/liquidmotion",
+    "jfif" => "image/pjpeg",
+    "jpb" => "application/octet-stream",
+    "jpg" => "image/jpeg", // Note: Use "jpg" first
+    "jpeg" => "image/jpeg",
+    "jpe" => "image/jpeg",
+    "js" => "application/javascript",
+    "json" => "application/json",
+    "jsx" => "text/jscript",
+    "latex" => "application/x-latex",
+    "lit" => "application/x-ms-reader",
+    "lpk" => "application/octet-stream",
+    "lsf" => "video/x-la-asf",
+    "lsx" => "video/x-la-asf",
+    "lzh" => "application/octet-stream",
+    "m13" => "application/x-msmediaview",
+    "m14" => "application/x-msmediaview",
+    "m1v" => "video/mpeg",
+    "m2ts" => "video/vnd.dlna.mpeg-tts",
+    "m3u" => "audio/x-mpegurl",
+    "m4a" => "audio/mp4",
+    "m4v" => "video/mp4",
+    "man" => "application/x-troff-man",
+    "manifest" => "application/x-ms-manifest",
+    "map" => "text/plain",
+    "mdb" => "application/x-msaccess",
+    "mdp" => "application/octet-stream",
+    "me" => "application/x-troff-me",
+    "mht" => "message/rfc822",
+    "mhtml" => "message/rfc822",
+    "mid" => "audio/mid",
+    "midi" => "audio/mid",
+    "mix" => "application/octet-stream",
+    "mmf" => "application/x-smaf",
+    "mno" => "text/xml",
+    "mny" => "application/x-msmoney",
+    "mov" => "video/quicktime",
+    "movie" => "video/x-sgi-movie",
+    "mp2" => "video/mpeg",
+    "mp3" => "audio/mpeg",
+    "mp4" => "video/mp4",
+    "mp4v" => "video/mp4",
+    "mpa" => "video/mpeg",
+    "mpe" => "video/mpeg",
+    "mpeg" => "video/mpeg",
+    "mpg" => "video/mpeg",
+    "mpp" => "application/vnd.ms-project",
+    "mpv2" => "video/mpeg",
+    "ms" => "application/x-troff-ms",
+    "msi" => "application/octet-stream",
+    "mso" => "application/octet-stream",
+    "mvb" => "application/x-msmediaview",
+    "mvc" => "application/x-miva-compiled",
+    "nc" => "application/x-netcdf",
+    "nsc" => "video/x-ms-asf",
+    "nws" => "message/rfc822",
+    "ocx" => "application/octet-stream",
+    "oda" => "application/oda",
+    "odc" => "text/x-ms-odc",
+    "ods" => "application/oleobject",
+    "oga" => "audio/ogg",
+    "ogg" => "video/ogg",
+    "ogv" => "video/ogg",
+    "ogx" => "application/ogg",
+    "one" => "application/onenote",
+    "onea" => "application/onenote",
+    "onetoc" => "application/onenote",
+    "onetoc2" => "application/onenote",
+    "onetmp" => "application/onenote",
+    "onepkg" => "application/onenote",
+    "osdx" => "application/opensearchdescription+xml",
+    "otf" => "font/otf",
+    "p10" => "application/pkcs10",
+    "p12" => "application/x-pkcs12",
+    "p7b" => "application/x-pkcs7-certificates",
+    "p7c" => "application/pkcs7-mime",
+    "p7m" => "application/pkcs7-mime",
+    "p7r" => "application/x-pkcs7-certreqresp",
+    "p7s" => "application/pkcs7-signature",
+    "pbm" => "image/x-portable-bitmap",
+    "pcx" => "application/octet-stream",
+    "pcz" => "application/octet-stream",
+    "pdf" => "application/pdf",
+    "pfb" => "application/octet-stream",
+    "pfm" => "application/octet-stream",
+    "pfx" => "application/x-pkcs12",
+    "pgm" => "image/x-portable-graymap",
+    "pko" => "application/vnd.ms-pki.pko",
+    "pma" => "application/x-perfmon",
+    "pmc" => "application/x-perfmon",
+    "pml" => "application/x-perfmon",
+    "pmr" => "application/x-perfmon",
+    "pmw" => "application/x-perfmon",
+    "png" => "image/png",
+    "pnm" => "image/x-portable-anymap",
+    "pnz" => "image/png",
+    "pot" => "application/vnd.ms-powerpoint",
+    "potm" => "application/vnd.ms-powerpoint.template.macroEnabled.12",
+    "potx" => "application/vnd.openxmlformats-officedocument.presentationml.template",
+    "ppam" => "application/vnd.ms-powerpoint.addin.macroEnabled.12",
+    "ppm" => "image/x-portable-pixmap",
+    "pps" => "application/vnd.ms-powerpoint",
+    "ppsm" => "application/vnd.ms-powerpoint.slideshow.macroEnabled.12",
+    "ppsx" => "application/vnd.openxmlformats-officedocument.presentationml.slideshow",
+    "ppt" => "application/vnd.ms-powerpoint",
+    "pptm" => "application/vnd.ms-powerpoint.presentation.macroEnabled.12",
+    "pptx" => "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+    "prf" => "application/pics-rules",
+    "prm" => "application/octet-stream",
+    "prx" => "application/octet-stream",
+    "ps" => "application/postscript",
+    "psd" => "application/octet-stream",
+    "psm" => "application/octet-stream",
+    "psp" => "application/octet-stream",
+    "pub" => "application/x-mspublisher",
+    "qt" => "video/quicktime",
+    "qtl" => "application/x-quicktimeplayer",
+    "qxd" => "application/octet-stream",
+    "ra" => "audio/x-pn-realaudio",
+    "ram" => "audio/x-pn-realaudio",
+    "rar" => "application/octet-stream",
+    "ras" => "image/x-cmu-raster",
+    "rf" => "image/vnd.rn-realflash",
+    "rgb" => "image/x-rgb",
+    "rm" => "application/vnd.rn-realmedia",
+    "rmi" => "audio/mid",
+    "roff" => "application/x-troff",
+    "rpm" => "audio/x-pn-realaudio-plugin",
+    "rtf" => "application/rtf",
+    "rtx" => "text/richtext",
+    "scd" => "application/x-msschedule",
+    "sct" => "text/scriptlet",
+    "sea" => "application/octet-stream",
+    "setpay" => "application/set-payment-initiation",
+    "setreg" => "application/set-registration-initiation",
+    "sgml" => "text/sgml",
+    "sh" => "application/x-sh",
+    "shar" => "application/x-shar",
+    "sit" => "application/x-stuffit",
+    "sldm" => "application/vnd.ms-powerpoint.slide.macroEnabled.12",
+    "sldx" => "application/vnd.openxmlformats-officedocument.presentationml.slide",
+    "smd" => "audio/x-smd",
+    "smi" => "application/octet-stream",
+    "smx" => "audio/x-smd",
+    "smz" => "audio/x-smd",
+    "snd" => "audio/basic",
+    "snp" => "application/octet-stream",
+    "spc" => "application/x-pkcs7-certificates",
+    "spl" => "application/futuresplash",
+    "spx" => "audio/ogg",
+    "src" => "application/x-wais-source",
+    "ssm" => "application/streamingmedia",
+    "sst" => "application/vnd.ms-pki.certstore",
+    "stl" => "application/vnd.ms-pki.stl",
+    "sv4cpio" => "application/x-sv4cpio",
+    "sv4crc" => "application/x-sv4crc",
+    "svg" => "image/svg+xml",
+    "svgz" => "image/svg+xml",
+    "swf" => "application/x-shockwave-flash",
+    "t" => "application/x-troff",
+    "tar" => "application/x-tar",
+    "tcl" => "application/x-tcl",
+    "tex" => "application/x-tex",
+    "texi" => "application/x-texinfo",
+    "texinfo" => "application/x-texinfo",
+    "tgz" => "application/x-compressed",
+    "thmx" => "application/vnd.ms-officetheme",
+    "thn" => "application/octet-stream",
+    "tif" => "image/tiff",
+    "tiff" => "image/tiff",
+    "toc" => "application/octet-stream",
+    "tr" => "application/x-troff",
+    "trm" => "application/x-msterminal",
+    "ts" => "video/vnd.dlna.mpeg-tts",
+    "tsv" => "text/tab-separated-values",
+    "ttc" => "application/x-font-ttf",
+    "ttf" => "application/x-font-ttf",
+    "tts" => "video/vnd.dlna.mpeg-tts",
+    "txt" => "text/plain",
+    "u32" => "application/octet-stream",
+    "uls" => "text/iuls",
+    "ustar" => "application/x-ustar",
+    "vbs" => "text/vbscript",
+    "vcf" => "text/x-vcard",
+    "vcs" => "text/plain",
+    "vdx" => "application/vnd.ms-visio.viewer",
+    "vml" => "text/xml",
+    "vsd" => "application/vnd.visio",
+    "vss" => "application/vnd.visio",
+    "vst" => "application/vnd.visio",
+    "vsto" => "application/x-ms-vsto",
+    "vsw" => "application/vnd.visio",
+    "vsx" => "application/vnd.visio",
+    "vtx" => "application/vnd.visio",
+    "wav" => "audio/wav",
+    "wax" => "audio/x-ms-wax",
+    "wbmp" => "image/vnd.wap.wbmp",
+    "wcm" => "application/vnd.ms-works",
+    "wdb" => "application/vnd.ms-works",
+    "webm" => "video/webm",
+    "webp" => "image/webp",
+    "wks" => "application/vnd.ms-works",
+    "wm" => "video/x-ms-wm",
+    "wma" => "audio/x-ms-wma",
+    "wmd" => "application/x-ms-wmd",
+    "wmf" => "application/x-msmetafile",
+    "wml" => "text/vnd.wap.wml",
+    "wmlc" => "application/vnd.wap.wmlc",
+    "wmls" => "text/vnd.wap.wmlscript",
+    "wmlsc" => "application/vnd.wap.wmlscriptc",
+    "wmp" => "video/x-ms-wmp",
+    "wmv" => "video/x-ms-wmv",
+    "wmx" => "video/x-ms-wmx",
+    "wmz" => "application/x-ms-wmz",
+    "woff" => "application/font-woff",
+    "woff2" => "application/font-woff2",
+    "wps" => "application/vnd.ms-works",
+    "wri" => "application/x-mswrite",
+    "wrl" => "x-world/x-vrml",
+    "wrz" => "x-world/x-vrml",
+    "wsdl" => "text/xml",
+    "wtv" => "video/x-ms-wtv",
+    "wvx" => "video/x-ms-wvx",
+    "x" => "application/directx",
+    "xaf" => "x-world/x-vrml",
+    "xaml" => "application/xaml+xml",
+    "xap" => "application/x-silverlight-app",
+    "xbap" => "application/x-ms-xbap",
+    "xbm" => "image/x-xbitmap",
+    "xdr" => "text/plain",
+    "xht" => "application/xhtml+xml",
+    "xhtml" => "application/xhtml+xml",
+    "xla" => "application/vnd.ms-excel",
+    "xlam" => "application/vnd.ms-excel.addin.macroEnabled.12",
+    "xlc" => "application/vnd.ms-excel",
+    "xlm" => "application/vnd.ms-excel",
+    "xls" => "application/vnd.ms-excel",
+    "xlsb" => "application/vnd.ms-excel.sheet.binary.macroEnabled.12",
+    "xlsm" => "application/vnd.ms-excel.sheet.macroEnabled.12",
+    "xlsx" => "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    "xlt" => "application/vnd.ms-excel",
+    "xltm" => "application/vnd.ms-excel.template.macroEnabled.12",
+    "xltx" => "application/vnd.openxmlformats-officedocument.spreadsheetml.template",
+    "xlw" => "application/vnd.ms-excel",
+    "xml" => "text/xml",
+    "xof" => "x-world/x-vrml",
+    "xpm" => "image/x-xpixmap",
+    "xps" => "application/vnd.ms-xpsdocument",
+    "xsd" => "text/xml",
+    "xsf" => "text/xml",
+    "xsl" => "text/xml",
+    "xslt" => "text/xml",
+    "xsn" => "application/octet-stream",
+    "xtp" => "application/octet-stream",
+    "xwd" => "image/x-xwindowdump",
+    "z" => "application/x-compress",
+    "zip" => "application/x-zip-compressed"
 );
 
 // Boolean html attributes
@@ -806,13 +795,12 @@ define("EW_NOT_NULL_VALUE", "##notnull##", TRUE);
  * 1 - no multi value
  * 2 - AND all multi values
  * 3 - OR all multi values
-*/
+ */
 define("EW_SEARCH_MULTI_VALUE_OPTION", 3, TRUE);
 
 // Quick search
 $EW_BASIC_SEARCH_IGNORE_PATTERN = "/[\?,\.\^\*\(\)\[\]\\\"]/"; // Ignore special characters
 define("EW_BASIC_SEARCH_ANY_FIELDS", FALSE, TRUE); // Search "All keywords" in any selected fields
-
 // Validate option
 define("EW_CLIENT_VALIDATE", TRUE, TRUE);
 define("EW_SERVER_VALIDATE", FALSE, TRUE);
@@ -847,7 +835,7 @@ $EW_RTL_LANGUAGES = array("ar", "fa", "he", "iw", "ug", "ur");
  * Note: DO NOT CHANGE THE FOLLOWING $EW_* VARIABLES!
  * If you want to use custom settings, customize the locale files for ew_FormatCurrency/Number/Percent functions.
  * Also read http://www.php.net/localeconv for description of the constants
-*/
+ */
 $EW_DECIMAL_POINT = ".";
 $EW_THOUSANDS_SEP = ",";
 $EW_CURRENCY_SYMBOL = "$";
@@ -868,31 +856,30 @@ $EW_DATE_FORMAT = "yyyy/mm/dd";
 $EW_DATE_FORMAT_ID = 5;
 $EW_TIME_ZONE = "GMT";
 $EW_LOCALE = array("decimal_point" => &$EW_DECIMAL_POINT,
-	"thousands_sep" => &$EW_THOUSANDS_SEP,
-	"currency_symbol" => &$EW_CURRENCY_SYMBOL,
-	"mon_decimal_point" => &$EW_MON_DECIMAL_POINT,
-	"mon_thousands_sep" => &$EW_MON_THOUSANDS_SEP,
-	"positive_sign" => &$EW_POSITIVE_SIGN,
-	"negative_sign" => &$EW_NEGATIVE_SIGN,
-	"frac_digits" => &$EW_FRAC_DIGITS,
-	"p_cs_precedes" => &$EW_P_CS_PRECEDES,
-	"p_sep_by_space" => &$EW_P_SEP_BY_SPACE,
-	"n_cs_precedes" => &$EW_N_CS_PRECEDES,
-	"n_sep_by_space" => &$EW_N_SEP_BY_SPACE,
-	"p_sign_posn" => &$EW_P_SIGN_POSN,
-	"n_sign_posn" => &$EW_N_SIGN_POSN,
-	"date_sep" => &$EW_DATE_SEPARATOR,
-	"time_sep" => &$EW_TIME_SEPARATOR,
-	"date_format" => &$EW_DATE_FORMAT,
-	"time_zone" => &$EW_TIME_ZONE
+    "thousands_sep" => &$EW_THOUSANDS_SEP,
+    "currency_symbol" => &$EW_CURRENCY_SYMBOL,
+    "mon_decimal_point" => &$EW_MON_DECIMAL_POINT,
+    "mon_thousands_sep" => &$EW_MON_THOUSANDS_SEP,
+    "positive_sign" => &$EW_POSITIVE_SIGN,
+    "negative_sign" => &$EW_NEGATIVE_SIGN,
+    "frac_digits" => &$EW_FRAC_DIGITS,
+    "p_cs_precedes" => &$EW_P_CS_PRECEDES,
+    "p_sep_by_space" => &$EW_P_SEP_BY_SPACE,
+    "n_cs_precedes" => &$EW_N_CS_PRECEDES,
+    "n_sep_by_space" => &$EW_N_SEP_BY_SPACE,
+    "p_sign_posn" => &$EW_P_SIGN_POSN,
+    "n_sign_posn" => &$EW_N_SIGN_POSN,
+    "date_sep" => &$EW_DATE_SEPARATOR,
+    "time_sep" => &$EW_TIME_SEPARATOR,
+    "date_format" => &$EW_DATE_FORMAT,
+    "time_zone" => &$EW_TIME_ZONE
 );
 
 // Set default time zone
 date_default_timezone_set($EW_TIME_ZONE);
 
 // Cookies
-define("EW_COOKIE_EXPIRY_TIME", time() + 365*24*60*60, TRUE); // Change cookie expiry time here
-
+define("EW_COOKIE_EXPIRY_TIME", time() + 365 * 24 * 60 * 60, TRUE); // Change cookie expiry time here
 // Client variables
 $EW_CLIENT_VAR = array();
 
@@ -902,45 +889,43 @@ $EW_CLIENT_VAR = array();
 
 if (!isset($conn)) {
 
-	// Common objects
-	$conn = NULL; // Connection
-	$Page = NULL; // Page
-	$UserTable = NULL; // User table
-	$UserTableConn = NULL; // User table connection
-	$Table = NULL; // Main table
-	$Grid = NULL; // Grid page object
-	$Language = NULL; // Language
-	$Security = NULL; // Security
-	$UserProfile = NULL; // User profile
-	$objForm = NULL; // Form
+  // Common objects
+  $conn = NULL; // Connection
+  $Page = NULL; // Page
+  $UserTable = NULL; // User table
+  $UserTableConn = NULL; // User table connection
+  $Table = NULL; // Main table
+  $Grid = NULL; // Grid page object
+  $Language = NULL; // Language
+  $Security = NULL; // Security
+  $UserProfile = NULL; // User profile
+  $objForm = NULL; // Form
+  // Current language
+  $gsLanguage = "";
 
-	// Current language
-	$gsLanguage = "";
+  // Token
+  $gsToken = "";
 
-	// Token
-	$gsToken = "";
+  // Used by ValidateForm/ValidateSearch
+  $gsFormError = ""; // Form error message
+  $gsSearchError = ""; // Search form error message
+  // Used by header.php, export checking
+  $gsExport = "";
+  $gsExportFile = "";
+  $gsCustomExport = "";
 
-	// Used by ValidateForm/ValidateSearch
-	$gsFormError = ""; // Form error message
-	$gsSearchError = ""; // Search form error message
+  // Used by header.php/footer.php, skip header/footer checking
+  $gbSkipHeaderFooter = FALSE;
+  $gbOldSkipHeaderFooter = $gbSkipHeaderFooter;
 
-	// Used by header.php, export checking
-	$gsExport = "";
-	$gsExportFile = "";
-	$gsCustomExport = "";
+  // Debug message
+  $gsDebugMsg = "";
 
-	// Used by header.php/footer.php, skip header/footer checking
-	$gbSkipHeaderFooter = FALSE;
-	$gbOldSkipHeaderFooter = $gbSkipHeaderFooter;
+  // Debug timer
+  $gTimer = NULL;
 
-	// Debug message
-	$gsDebugMsg = "";
-
-	// Debug timer
-	$gTimer = NULL;
-
-	// Keep temp images name for PDF export for delete
-	$gTmpImages = array();
+  // Keep temp images name for PDF export for delete
+  $gTmpImages = array();
 }
 
 // Mobile detect
@@ -954,8 +939,10 @@ $Breadcrumb = NULL;
 $LoginStatus = array();
 ?>
 <?php
+
 $EW_USE_SUBMENU_FOR_ROOT_HEADER = FALSE;
 ?>
 <?php
+
 define("EW_PDF_STYLESHEET_FILENAME", "", TRUE); // Export PDF CSS styles
 ?>

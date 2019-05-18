@@ -1,5 +1,10 @@
 <?php
-//$PH_BASE_PATH = '/PhSara/';
+if (session_id() == "") {
+  session_start(); // Init session data
+}
+ob_start(); // Turn on output buffering
+?>
+<?php
 $PH_BASE_PATH = '/PhSara';
 $PH_BASE_IMAGES_PATH = '/PhSara/';
 $PH_RELATIVE_PATH = "PhApps/";
