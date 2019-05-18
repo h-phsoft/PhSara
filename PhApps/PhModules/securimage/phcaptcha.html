@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <div>
+    <img style="float: left; padding-right: 5px" id="captcha_image" src="securimage_show.php?<?php echo md5(uniqid(time)) ?>" alt="CAPTCHA Image">
+    <div style="clear: both"></div>
+    <input name="captcha_code" id="captcha_code" type="text" placeholder="Type the text">
+    <a tabindex="-1" style="border: 0" href="#" title="Refresh Image" onclick="document.getElementById('captcha_image').src = 'securimage_show.php?' + Math.random(); captcha_image_audioObj.refresh(); this.blur(); return false">
+      <img src="images/refresh.png" alt="Refresh Image" onclick="this.blur()" style="border: 0px; vertical-align: bottom" height="32" width="32">
+    </a>
+  </div>
+  <script type="text/javascript" src="securimage.js"></script>
+</body>
+</html>

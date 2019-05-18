@@ -18,16 +18,16 @@
         <div class="col-12">
           <form action="<?php echo $PH_BASE_PATH . '/mailsend'; ?>" method="POST">
             <div class="form-group">
-              <input class="form-control" name="name" type="text" placeholder="Name" required>
+              <input class="form-control" name="cus_name" type="text" placeholder="Name" required>
             </div>
             <div class="form-group">
-              <input class="form-control" name="email" type="text" placeholder="Email" required>
+              <input class="form-control" name="cus_email" type="text" placeholder="Email" required>
             </div>
             <div class="form-group">
-              <input class="form-control" name="subject" type="text" placeholder="Subject" required>
+              <input class="form-control" name="cus_subject" type="text" placeholder="Subject" required>
             </div>
             <div class="form-group">
-              <textarea class="border form-control-plaintext" name="message" rows="8" placeholder="Message" required></textarea>
+              <textarea class="border form-control-plaintext" name="cus_message" rows="8" placeholder="Message" required></textarea>
             </div>
             <div class="form-group">
               <input class="btn btn-block" type="submit" value="Submit">
@@ -44,16 +44,16 @@
         <div class="col-12">
           <form id="formNewsletter" name="formNewsletter" action="<?php echo$PH_BASE_PATH . '/subsave'; ?>"  method="post">
             <div class="form-group">
-              <input class="form-control" type="text" placeholder="Name" name="name" required>
+              <input class="form-control" type="text" placeholder="sub_Name" name="name" required>
             </div>
             <div class="form-group">
-              <input class="form-control" type="text" placeholder="Email" name="email" required>
+              <input class="form-control" type="text" placeholder="sub_Email" name="email" required>
             </div>
             <div class="form-group">
-              <input class="form-control" type="text" placeholder="Country" name="country" required>
+              <input class="form-control" type="text" placeholder="sub_Country" name="country" required>
             </div>
             <div class="form-group">
-              <textarea class="border form-control-plaintext" name="occupation" rows="8" placeholder="Occupation" required></textarea>
+              <textarea class="border form-control-plaintext" name="sub_occupation" rows="8" placeholder="Occupation" required></textarea>
             </div>
             <div class="form-group">
               <input class="btn btn-block" type="submit" name="subscribe" value="Subscribe" >
