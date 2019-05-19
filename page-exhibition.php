@@ -83,7 +83,7 @@ if (count($exhib->aArtworks) > 0) {
             ?>
             <a href="<?php echo $PH_BASE_PATH . '?' . '2/' . $artWork->Art_Id; ?>" class="image_popup" rel="group">
               <div class="col-12 d-flex justify-content-center align-items-center" style="height: 50vh;">
-                <img src="<?php echo $PH_BASE_PATH_IMAGE_SMALL . $artWork->Art_Image ?>" style="height: 50vh;">
+                <img src="<?php echo $PH_BASE_PATH_IMAGE_SMALL . $artWork->Art_Image ?>" style="height: 45vh;">
               </div>
             </a>
             <?php
@@ -98,7 +98,7 @@ if (count($exhib->aArtworks) > 0) {
               ?>
               <a href="<?php echo $PH_BASE_PATH . '2/' . $artWork->Art_Id; ?>" class="image_popup" rel="group">
                 <div class="col-12 d-flex justify-content-center align-items-center" style="height: 50vh;">
-                  <img src="<?php echo $PH_BASE_PATH_IMAGE_SMALL . $artWork->Art_Image ?>" style="height: 50vh;">
+                  <img src="<?php echo $PH_BASE_PATH_IMAGE_SMALL . $artWork->Art_Image ?>" style="height: 45vh;">
                 </div>
               </a>
               <?php
@@ -133,7 +133,7 @@ if (count($exhib->aImages) > 0) {
           foreach ($exhib->aImages as $image) {
             ?>
             <div class="col-12 d-flex justify-content-center align-items-center" style="height: 50vh;">
-              <img src="<?php echo $PH_BASE_PATH_IMAGE_UPLOADS . $image->Exhib_Image ?>" style="height: 50vh;">
+              <img src="<?php echo $PH_BASE_PATH_IMAGE_UPLOADS . $image->Exhib_Image ?>" style="height: 45vh;">
             </div>
             <?php
           }
@@ -147,7 +147,7 @@ if (count($exhib->aImages) > 0) {
           foreach ($exhib->aImages as $image) {
             ?>
             <div class="col-12 d-flex justify-content-center align-items-center" style="height: 50vh;">
-              <img src="<?php echo $PH_BASE_PATH_IMAGE_UPLOADS . $image->Exhib_Image ?>" style="height: 50vh; max-width: 50vw">
+              <img src="<?php echo $PH_BASE_PATH_IMAGE_UPLOADS . $image->Exhib_Image ?>" style="height: 45vh;">
             </div>
             <?php
           }
