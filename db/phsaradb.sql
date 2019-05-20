@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 29, 2019 at 04:32 PM
+-- Generation Time: May 20, 2019 at 08:18 AM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.14
 
@@ -1854,7 +1854,10 @@ DROP TABLE IF EXISTS `cpy_subscribe`;
 CREATE TABLE IF NOT EXISTS `cpy_subscribe` (
   `sub_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Auto PK',
   `sub_email` varchar(200) NOT NULL COMMENT 'Email',
-  `status_id` tinyint(1) NOT NULL COMMENT 'Status',
+  `sub_name` varchar(200) DEFAULT NULL COMMENT 'Name',
+  `sub_country` varchar(100) DEFAULT NULL COMMENT 'Country',
+  `sub_message` varchar(1024) DEFAULT NULL COMMENT 'Message',
+  `status_id` tinyint(1) NOT NULL DEFAULT '1' COMMENT 'Status',
   PRIMARY KEY (`sub_id`),
   UNIQUE KEY `sub_email` (`sub_email`),
   KEY `status_id` (`status_id`)
@@ -1864,44 +1867,44 @@ CREATE TABLE IF NOT EXISTS `cpy_subscribe` (
 -- Dumping data for table `cpy_subscribe`
 --
 
-INSERT INTO `cpy_subscribe` (`sub_id`, `sub_email`, `status_id`) VALUES
-(2, 'message@sarashamma.com', 1),
-(3, 'elias.hijazi@nazhaco.com', 1),
-(4, 'e66exgirl@gm@il.com', 1),
-(7, 'lace@cooperlace.com', 1),
-(8, 'Randy@TalkWithLead.com', 1),
-(9, 'getmore@ytshugbs.com', 1),
-(10, 'info@loomcrafts.com', 1),
-(11, 'rick.nahm@globaltopround.com', 1),
-(12, 'seale.esmeralda@yahoo.com', 1),
-(13, 'bage.adolfo@gmail.com', 1),
-(14, 'noreply@socialchief.online', 1),
-(16, 'perrin.crystle@gmail.com', 1),
-(17, 'liliana.tait@outlook.com', 1),
-(18, 'milenkoivanovic@gmail.com', 1),
-(19, 'naures.atto@gmail.com', 1),
-(20, 'fuzz@fuzzillustration.com', 1),
-(21, 'susancook@4videodeals.com', 1),
-(22, 'gale.cade40@yahoo.com', 1),
-(23, 'mado@yougottabeyou.com', 1),
-(24, 'elizabethghoa2gonzalez@aol.com', 1),
-(26, 'ima.lampe@gmail.com', 1),
-(28, 'lora.segura95@yahoo.com', 1),
-(29, 'hannahqevz0martin@aol.com', 1),
-(30, 'minerva.mcneely@gmail.com', 1),
-(31, 'cristine.langridge84@gmail.com', 1),
-(33, 'noreply@noboostnoglory.club', 1),
-(34, 'xogle@aol.com', 1),
-(35, 'valencia.arreguin@msn.com', 1),
-(36, 'kennethevans34@gmx.com', 1),
-(37, 'scobie.holley@gmail.com', 1),
-(38, 'brownallison63@aol.com', 1),
-(39, 'tony.coombes85@gmail.com', 1),
-(41, 'george1@georgemartinjr.com', 1),
-(42, 'eric@talkwithcustomer.com', 1),
-(43, 'hello@szifon.com', 1),
-(45, 'aly1@alychidesigns.com', 1),
-(48, 'haun.penny@msn.com', 1);
+INSERT INTO `cpy_subscribe` (`sub_id`, `sub_email`, `sub_name`, `sub_country`, `sub_message`, `status_id`) VALUES
+(2, 'message@sarashamma.com', NULL, NULL, NULL, 1),
+(3, 'elias.hijazi@nazhaco.com', NULL, NULL, NULL, 1),
+(4, 'e66exgirl@gm@il.com', NULL, NULL, NULL, 1),
+(7, 'lace@cooperlace.com', NULL, NULL, NULL, 1),
+(8, 'Randy@TalkWithLead.com', NULL, NULL, NULL, 1),
+(9, 'getmore@ytshugbs.com', NULL, NULL, NULL, 1),
+(10, 'info@loomcrafts.com', NULL, NULL, NULL, 1),
+(11, 'rick.nahm@globaltopround.com', NULL, NULL, NULL, 1),
+(12, 'seale.esmeralda@yahoo.com', NULL, NULL, NULL, 1),
+(13, 'bage.adolfo@gmail.com', NULL, NULL, NULL, 1),
+(14, 'noreply@socialchief.online', NULL, NULL, NULL, 1),
+(16, 'perrin.crystle@gmail.com', NULL, NULL, NULL, 1),
+(17, 'liliana.tait@outlook.com', NULL, NULL, NULL, 1),
+(18, 'milenkoivanovic@gmail.com', NULL, NULL, NULL, 1),
+(19, 'naures.atto@gmail.com', NULL, NULL, NULL, 1),
+(20, 'fuzz@fuzzillustration.com', NULL, NULL, NULL, 1),
+(21, 'susancook@4videodeals.com', NULL, NULL, NULL, 1),
+(22, 'gale.cade40@yahoo.com', NULL, NULL, NULL, 1),
+(23, 'mado@yougottabeyou.com', NULL, NULL, NULL, 1),
+(24, 'elizabethghoa2gonzalez@aol.com', NULL, NULL, NULL, 1),
+(26, 'ima.lampe@gmail.com', NULL, NULL, NULL, 1),
+(28, 'lora.segura95@yahoo.com', NULL, NULL, NULL, 1),
+(29, 'hannahqevz0martin@aol.com', NULL, NULL, NULL, 1),
+(30, 'minerva.mcneely@gmail.com', NULL, NULL, NULL, 1),
+(31, 'cristine.langridge84@gmail.com', NULL, NULL, NULL, 1),
+(33, 'noreply@noboostnoglory.club', NULL, NULL, NULL, 1),
+(34, 'xogle@aol.com', NULL, NULL, NULL, 1),
+(35, 'valencia.arreguin@msn.com', NULL, NULL, NULL, 1),
+(36, 'kennethevans34@gmx.com', NULL, NULL, NULL, 1),
+(37, 'scobie.holley@gmail.com', NULL, NULL, NULL, 1),
+(38, 'brownallison63@aol.com', NULL, NULL, NULL, 1),
+(39, 'tony.coombes85@gmail.com', NULL, NULL, NULL, 1),
+(41, 'george1@georgemartinjr.com', NULL, NULL, NULL, 1),
+(42, 'eric@talkwithcustomer.com', NULL, NULL, NULL, 1),
+(43, 'hello@szifon.com', NULL, NULL, NULL, 1),
+(45, 'aly1@alychidesigns.com', NULL, NULL, NULL, 1),
+(48, 'haun.penny@msn.com', NULL, NULL, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -2007,6 +2010,8 @@ INSERT INTO `phs_menu` (`menu_id`, `menu_pid`, `page_id`, `status_id`, `menu_ord
 (1, -1, 0, 1, 0, 'Socials', NULL, NULL, NULL, NULL),
 (2, -1, 0, 1, 0, 'Artworks', NULL, NULL, NULL, 'page-artwork.php'),
 (3, -1, 0, 1, 0, 'Exhibition', NULL, NULL, NULL, 'page-exhibition.php'),
+(4, -1, 0, 1, 0, 'SendMail', NULL, NULL, NULL, 'page-send-mail.php'),
+(5, -1, 0, 1, 0, 'Subscribe', NULL, NULL, NULL, 'page-subscribe.php'),
 (100, 0, 0, 1, 0, 'Home', NULL, NULL, NULL, 'page-main.php'),
 (101, 0, 0, 1, 1, 'Biography', NULL, NULL, NULL, 'page-biography.php'),
 (102, 0, 0, 1, 2, 'News', NULL, NULL, NULL, 'page-news.php'),
@@ -2104,7 +2109,7 @@ CREATE TABLE IF NOT EXISTS `phs_setting` (
   `set_val` varchar(255) NOT NULL DEFAULT 'none' COMMENT 'Value',
   PRIMARY KEY (`set_id`),
   UNIQUE KEY `set_name` (`set_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=73 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `phs_setting`
@@ -2152,7 +2157,9 @@ INSERT INTO `phs_setting` (`set_id`, `set_name`, `set_val`) VALUES
 (67, 'App-Menu-Book-Subscribe', '3409'),
 (68, 'App-Page-Book', 'app-book.php'),
 (69, 'App-Page-Take-Test', 'app-test-take.php'),
-(70, 'App-Page-Register', 'app-register.php');
+(70, 'App-Page-Register', 'app-register.php'),
+(71, 'Menu-SendMail', '4'),
+(72, 'Menu-Subscribe', '5');
 
 -- --------------------------------------------------------
 
@@ -2256,7 +2263,7 @@ INSERT INTO `phs_users` (`user_id`, `pgrp_id`, `user_logon`, `user_password`, `u
 --
 DROP TABLE IF EXISTS `cpy_vartwork`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `cpy_vartwork`  AS  select `tt`.`type_id` AS `type_id`,`tt`.`type_order` AS `type_order`,`tt`.`type_name` AS `type_name`,`aa`.`art_id` AS `art_id`,`aa`.`art_year` AS `art_year`,`aa`.`art_title1` AS `art_title1`,`aa`.`art_title2` AS `art_title2`,`aa`.`art_size` AS `art_size`,`aa`.`art_image` AS `art_image` from (`cpy_arttype` `tt` join `cpy_artwork` `aa`) where (`aa`.`type_id` = `tt`.`type_id`) ;
+CREATE VIEW `cpy_vartwork`  AS  select `tt`.`type_id` AS `type_id`,`tt`.`type_order` AS `type_order`,`tt`.`type_name` AS `type_name`,`aa`.`art_id` AS `art_id`,`aa`.`art_year` AS `art_year`,`aa`.`art_title1` AS `art_title1`,`aa`.`art_title2` AS `art_title2`,`aa`.`art_size` AS `art_size`,`aa`.`art_image` AS `art_image` from (`cpy_arttype` `tt` join `cpy_artwork` `aa`) where (`aa`.`type_id` = `tt`.`type_id`) ;
 
 -- --------------------------------------------------------
 
@@ -2265,7 +2272,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `cpy_vartwork_subjects`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `cpy_vartwork_subjects`  AS  select `ss`.`subj_id` AS `subj_id`,`ss`.`subj_order` AS `subj_order`,`ss`.`subj_name` AS `subj_name`,`aa`.`type_id` AS `type_id`,`aa`.`type_order` AS `type_order`,`aa`.`type_name` AS `type_name`,`aa`.`art_id` AS `art_id`,`aa`.`art_year` AS `art_year`,`aa`.`art_title1` AS `art_title1`,`aa`.`art_title2` AS `art_title2`,`aa`.`art_size` AS `art_size`,`aa`.`art_image` AS `art_image` from ((`cpy_subject` `ss` join `cpy_artwork_subject` `sa`) join `cpy_vartwork` `aa`) where ((`sa`.`art_id` = `aa`.`art_id`) and (`sa`.`subj_id` = `ss`.`subj_id`)) ;
+CREATE VIEW `cpy_vartwork_subjects`  AS  select `ss`.`subj_id` AS `subj_id`,`ss`.`subj_order` AS `subj_order`,`ss`.`subj_name` AS `subj_name`,`aa`.`type_id` AS `type_id`,`aa`.`type_order` AS `type_order`,`aa`.`type_name` AS `type_name`,`aa`.`art_id` AS `art_id`,`aa`.`art_year` AS `art_year`,`aa`.`art_title1` AS `art_title1`,`aa`.`art_title2` AS `art_title2`,`aa`.`art_size` AS `art_size`,`aa`.`art_image` AS `art_image` from ((`cpy_subject` `ss` join `cpy_artwork_subject` `sa`) join `cpy_vartwork` `aa`) where ((`sa`.`art_id` = `aa`.`art_id`) and (`sa`.`subj_id` = `ss`.`subj_id`)) ;
 
 --
 -- Constraints for dumped tables
