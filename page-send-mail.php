@@ -27,7 +27,7 @@ if ($email != '') {
             "BCC" => ""
         );
         $mailSettings = array(
-            "PH_SMTP_SERVER" => "",
+            "PH_SMTP_SERVER" => "mail.sarashamma.com",
             "PH_SMTP_SERVER_PORT" => "25",
             "PH_SMTP_SERVER_USERNAME" => "",
             "PH_SMTP_SERVER_PASSWORD" => "",

@@ -2,6 +2,7 @@ $(document).ready(function () {
 
   $(".slider").slick({
     dots: true,
+    center: true,
     infinite: true,
     variableWidth: true,
     mobileFirst: true
